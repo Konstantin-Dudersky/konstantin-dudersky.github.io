@@ -12,6 +12,14 @@ export default defineConfig({
       social: [{ icon: "github", label: "GitHub", href: "https://github.com/withastro/starlight" }],
       sidebar: [
         {
+          label: "Модули",
+          items: [
+            { label: "Обзор", link: "/modules/about" },
+            { label: "PS-20W - Блок питания", link: "/modules/PMPS-20W" },
+            { label: "CNV-DIx32 - 32 дискретных входа", link: "/modules/CNV-DIx32" },
+          ],
+        },
+        {
           label: "Guides",
           items: [
             // Each item here is one entry in the navigation menu.
