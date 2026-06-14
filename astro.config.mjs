@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,24 +14,15 @@ export default defineConfig({
       sidebar: [
         {
           label: "Модули",
+          collapsed: true,
           items: [
             { label: "Обзор", link: "/modules/about" },
             { label: "PS-20W - Блок питания", link: "/modules/PMPS-20W" },
             { label: "CNV-DIx32 - 32 дискретных входа", link: "/modules/CNV-DIx32" },
           ],
         },
-        {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
-          ],
-        },
-        {
-          label: "Reference",
-          items: [{ autogenerate: { directory: "reference" } }],
-        },
       ],
     }),
+    sitemap(),
   ],
 });
