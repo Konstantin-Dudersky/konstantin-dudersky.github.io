@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightScrollToTop from "starlight-scroll-to-top";
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,24 +9,36 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Электроника",
+      locales: {
+        root: {
+          label: "Russian",
+          lang: "ru-RU",
+        },
+      },
+
       social: [
+        { icon: "telegram", label: "Telegram", href: "https://t.me/konstantin_dudersky" },
         { icon: "github", label: "GitHub", href: "https://github.com/Konstantin-Dudersky" },
         { icon: "youtube", label: "YouTube", href: "https://www.youtube.com/@Tokarev_by" },
+        { icon: "external", label: "VkVideo", href: "https://vkvideo.ru/@club230328698" },
       ],
       sidebar: [
         {
           label: "Модули",
           collapsed: true,
-          items: [
-            { label: "Обзор", link: "/modules/about" },
-            { label: "PS-20W - Блок питания", link: "/modules/pmps-20w/" },
-            { label: "CNV-DIx32 - 32 дискретных входа", link: "/modules/pmcnv-dix32" },
-          ],
+          items: [{ autogenerate: { directory: "modules", collapsed: true } }],
+        },
+        {
+          label: "Контакты",
+          link: "/contacts",
         },
       ],
+      lastUpdated: true,
       components: {
         Header: "./src/components/Header.astro",
       },
+      plugins: [starlightScrollToTop()],
+      credits: true,
     }),
   ],
 });
