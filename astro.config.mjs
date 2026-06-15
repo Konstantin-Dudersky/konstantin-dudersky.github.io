@@ -18,9 +18,9 @@ export default defineConfig({
 
       social: [
         { icon: "telegram", label: "Telegram", href: "https://t.me/konstantin_dudersky" },
-        { icon: "github", label: "GitHub", href: "https://github.com/Konstantin-Dudersky" },
+        { icon: "email", label: "Email", href: "mailto:mail@kdudersky.ru" },
         { icon: "youtube", label: "YouTube", href: "https://www.youtube.com/@Tokarev_by" },
-        { icon: "external", label: "VkVideo", href: "https://vkvideo.ru/@club230328698" },
+        { icon: "github", label: "GitHub", href: "https://github.com/Konstantin-Dudersky" },
       ],
       sidebar: [
         {
