@@ -15,7 +15,6 @@ export default defineConfig({
           lang: "ru-RU",
         },
       },
-
       social: [
         { icon: "telegram", label: "Telegram", href: "https://t.me/konstantin_dudersky" },
         { icon: "email", label: "Email", href: "mailto:mail@kdudersky.ru" },
