@@ -27,7 +27,7 @@ export default defineConfig({
         { icon: "youtube", label: "YouTube", href: "https://www.youtube.com/@Tokarev_by" },
         { icon: "github", label: "GitHub", href: "https://github.com/Konstantin-Dudersky" },
       ],
-      customCss: ["./src/styles/global.css"],
+      customCss: ["./src/styles/global.css", "./src/fonts/font-face.css"],
       sidebar: [
         {
           label: "Весоизмерительные системы",
