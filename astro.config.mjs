@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import { unified } from "@astrojs/markdown-remark";
+
 import starlightScrollToTop from "starlight-scroll-to-top";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -9,8 +11,10 @@ import rehypeKatex from "rehype-katex";
 export default defineConfig({
   site: "https://konstantin-dudersky.github.io",
   markdown: {
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [[rehypeKatex, { output: "mathml" }]],
+    processor: unified({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [[rehypeKatex, { output: "mathml" }]],
+    }),
   },
   integrations: [
     starlight({
