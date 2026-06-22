@@ -16,6 +16,10 @@ math[display="block"] {
     text-align: center;
 }
 
+.test {
+    font-family: "PT Sans";
+}
+
 /* Clear browser-specific padding and margins */
 mrow,
 mtext,
