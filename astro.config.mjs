@@ -6,6 +6,7 @@ import { unified } from "@astrojs/markdown-remark";
 import starlightScrollToTop from "starlight-scroll-to-top";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import starlightThemeNord from "starlight-theme-nord";
 
 // https://astro.build/config
 export default defineConfig({
@@ -55,7 +56,7 @@ export default defineConfig({
       components: {
         Header: "./src/components/Header.astro",
       },
-      plugins: [starlightScrollToTop()],
+      plugins: [starlightScrollToTop(), starlightThemeNord()],
       credits: true,
     }),
   ],

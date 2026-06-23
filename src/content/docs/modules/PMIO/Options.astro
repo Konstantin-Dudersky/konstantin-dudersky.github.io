@@ -1,0 +1,59 @@
+---
+import { Steps } from "@astrojs/starlight/components";
+
+interface Props {
+    config: IAllOptions;
+}
+const { config } = Astro.props;
+
+export interface IOptionVariant {
+    name: string;
+    desc: string;
+    price: number;
+}
+
+export interface IOption {
+    name: string;
+    variants: IOptionVariant[];
+}
+
+export interface IAllOptions {
+    base_price: number;
+    options: IOption[];
+}
+---
+
+<script>
+    const buttons = document.querySelectorAll(".data-option") as NodeListOf<HTMLInputElement>;
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => alert(button.value));
+    });
+</script>
+
+<p>Конфигурация:</p>
+
+<p>Стоимость: {config.base_price}</p>
+
+<Steps>
+    <ol>
+        {
+            config.options.map((o, o_index) => (
+                <li>
+                    <p>{o.name}</p>
+                    {o.variants.map((ov, ov_index) => (
+                        <div>
+                            <input
+                                type="radio"
+                                id={o.name + "-" + ov.name}
+                                name={o_index}
+                                value={[o_index, ov_index]}
+                                class="data-option"
+                            />
+                            <label for={o.name + "-" + ov.name}>{ov.desc}</label>
+                        </div>
+                    ))}
+                </li>
+            ))
+        }
+    </ol>
+</Steps>
