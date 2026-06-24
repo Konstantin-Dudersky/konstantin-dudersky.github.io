@@ -31,29 +31,31 @@ export interface IOptionsConfig {
 
 <p>Стоимость: <b><code id="price" style="font-size: 1rem;"></code> $</b></p>
 
-<Tabs>
-    {
-        options_config.options.map((o, o_index) => (
-            <TabItem label={(o_index + 1).toString()}>
-                <p>{o.name}</p>
-                {o.variants.map((ov, ov_index) => (
-                    <div>
-                        <input
-                            type="radio"
-                            id={"option_" + o_index.toString() + "_" + ov_index.toString()}
-                            name={o_index.toString()}
-                            value={ov_index}
-                            class="data-option"
-                        />
-                        <label for={"option_" + o_index.toString() + "_" + ov_index.toString()}>
-                            {ov.desc} (+{ov.price.toFixed(1)} $)
-                        </label>
-                    </div>
-                ))}
-            </TabItem>
-        ))
-    }
-</Tabs>
+<div id="options_wrapper">
+    <Tabs>
+        {
+            options_config.options.map((o, o_index) => (
+                <TabItem label={(o_index + 1).toString()}>
+                    <p>{o.name}</p>
+                    {o.variants.map((ov, ov_index) => (
+                        <div>
+                            <input
+                                type="radio"
+                                id={"option_" + o_index.toString() + "_" + ov_index.toString()}
+                                name={o_index.toString()}
+                                value={ov_index}
+                                class="data-option"
+                            />
+                            <label for={"option_" + o_index.toString() + "_" + ov_index.toString()}>
+                                {ov.desc} (+{ov.price.toFixed(1)} $)
+                            </label>
+                        </div>
+                    ))}
+                </TabItem>
+            ))
+        }
+    </Tabs>
+</div>
 
 <script is:inline define:vars={{ options_config }}>
     // Установить значения по умолчанию для опций
@@ -92,6 +94,11 @@ export interface IOptionsConfig {
 
         let option_string = option_variants.join("/");
         document.querySelector("#option_variant_config").textContent = option_string;
+
+        let tabs = document.querySelectorAll("#options_wrapper a");
+        tabs.forEach((tab, index) => {
+            tab.textContent = option_variants[index];
+        });
     }
 
     window.onload = function () {
