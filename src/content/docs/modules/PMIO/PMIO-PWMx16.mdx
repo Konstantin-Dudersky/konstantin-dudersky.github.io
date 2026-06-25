@@ -3,8 +3,29 @@ title: PMIO-PWMx16
 description: Подробное описание модуля PMIO-PWMx16 - 16 ШИМ выходов
 ---
 
+import Options  from '../../../../components/Options.astro';
+
+{/* import ExtConn from "./PMIO-AITx8/ext_conn.svg";*/}
+import Schematic from "./PMIO-PWMx16/schematic.svg";
+import { options_config } from './PMIO-PWMx16/options.ts';
+
+
 Модуль для управления 16 ШИМ выходами.
+
+Работает на основе чипа **PCA9685** [^1].
+
+
+## Опции
+
+<Options options_config = { options_config } />
+
+## Внешний вид
+
+![PMIO-PWMx16 - вид сверху](./PMIO-PWMx16/render_x0y0z0.png)
+![PMIO-PWMx16 - вид снизу](./PMIO-PWMx16/render_x0y180z0.png)
 
 ## Описание
 
-## Опции
+<Schematic />
+
+[^1]: **PCA9685** - https://www.nxp.com/products/power-drivers/lighting-driver-and-controller-ics/led-drivers/16-channel-12-bit-pwm-fm-plus-ic-bus-led-driver:PCA9685

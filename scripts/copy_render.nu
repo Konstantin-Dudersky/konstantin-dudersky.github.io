@@ -22,5 +22,6 @@ copy PMIF-I2Cx8 0.1.0
 copy PMIO-AITx8 0.1.0
 copy PMIO-DIx32 0.1.0
 copy PMIO-DQx16 0.1.0
+copy PMIO-PWMx16 0.1.0
 copy PMIO-RQx8 0.1.0
 copy PMPS-20W 0.1.0

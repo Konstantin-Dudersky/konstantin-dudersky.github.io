@@ -36,7 +36,9 @@ export interface IOptionsConfig {
         {
             options_config.options.map((o, o_index) => (
                 <TabItem label={(o_index + 1).toString()}>
-                    <p>{o.name}</p>
+                    <p>
+                        {o_index + 1}. {o.name}
+                    </p>
                     {o.variants.map((ov, ov_index) => (
                         <div>
                             <input
