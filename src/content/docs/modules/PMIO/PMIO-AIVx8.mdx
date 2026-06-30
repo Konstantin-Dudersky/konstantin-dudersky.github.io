@@ -1,0 +1,25 @@
+---
+title: PMIO-AIVx8
+description: Модуль подключения 8 датчиков 0-10 В или 0-20 мА.
+---
+
+import Options  from '@components/Options.astro';
+import ExtConn from "./PMIO-AITx8/ext_conn.svg";
+import Schematic from "./PMIO-AITx8/schematic.svg";
+import { options_config } from './PMIO-AIVx8/options.ts';
+
+<p>
+    { frontmatter.description }
+</p>
+
+
+## Опции
+
+<Options options_config = {options_config} />
+
+## Внешний вид
+
+![PMIO-AIVx8 - вид сверху](./PMIO-AIVx8/render_x0y0z0.png)
+![PMIO-AIVx8 - вид снизу](./PMIO-AIVx8/render_x0y180z0.png)
+
+## Описание
