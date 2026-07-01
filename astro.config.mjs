@@ -20,6 +20,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Электроника",
+      logo: {
+        src: "./public/flat-color-icons--electronics.svg",
+      },
       social: [
         { icon: "telegram", label: "Telegram", href: "https://t.me/konstantin_dudersky" },
         { icon: "email", label: "Email", href: "mailto:mail@kdudersky.ru" },
