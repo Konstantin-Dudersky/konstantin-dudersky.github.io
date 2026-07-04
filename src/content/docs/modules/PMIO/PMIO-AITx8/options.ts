@@ -8,369 +8,47 @@ export const options_config: IOptionsConfig = {
   base_price: 0.0,
   options: [
     {
-      name: "Тип термопары канал CH0",
-      default: 3,
+      name: "Количество каналов подключения термопар",
+      default: 7,
       variants: [
         {
-          name: "x",
-          desc: "Без термопары",
+          name: "1",
+          desc: "1 канал",
           price: 777,
         } as IOptionVariant,
         {
-          name: "E",
-          desc: "Тип E",
+          name: "2",
+          desc: "2 канала",
           price: 777,
         } as IOptionVariant,
         {
-          name: "J",
-          desc: "Тип J",
+          name: "3",
+          desc: "3 канала",
           price: 777,
         } as IOptionVariant,
         {
-          name: "K",
-          desc: "Тип K",
+          name: "4",
+          desc: "4 канала",
           price: 777,
         } as IOptionVariant,
         {
-          name: "N",
-          desc: "Тип N",
+          name: "5",
+          desc: "5 каналов",
           price: 777,
         } as IOptionVariant,
         {
-          name: "R",
-          desc: "Тип R",
+          name: "6",
+          desc: "6 каналов",
           price: 777,
         } as IOptionVariant,
         {
-          name: "S",
-          desc: "Тип S",
+          name: "7",
+          desc: "7 каналов",
           price: 777,
         } as IOptionVariant,
         {
-          name: "T",
-          desc: "Тип T",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Тип термопары канал CH1",
-      default: 3,
-      variants: [
-        {
-          name: "x",
-          desc: "Без термопары",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "E",
-          desc: "Тип E",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "J",
-          desc: "Тип J",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "K",
-          desc: "Тип K",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "N",
-          desc: "Тип N",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "R",
-          desc: "Тип R",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "S",
-          desc: "Тип S",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "T",
-          desc: "Тип T",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Тип термопары канал CH2",
-      default: 3,
-      variants: [
-        {
-          name: "x",
-          desc: "Без термопары",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "E",
-          desc: "Тип E",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "J",
-          desc: "Тип J",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "K",
-          desc: "Тип K",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "N",
-          desc: "Тип N",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "R",
-          desc: "Тип R",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "S",
-          desc: "Тип S",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "T",
-          desc: "Тип T",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Тип термопары канал CH3",
-      default: 3,
-      variants: [
-        {
-          name: "x",
-          desc: "Без термопары",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "E",
-          desc: "Тип E",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "J",
-          desc: "Тип J",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "K",
-          desc: "Тип K",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "N",
-          desc: "Тип N",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "R",
-          desc: "Тип R",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "S",
-          desc: "Тип S",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "T",
-          desc: "Тип T",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Тип термопары канал CH4",
-      default: 3,
-      variants: [
-        {
-          name: "x",
-          desc: "Без термопары",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "E",
-          desc: "Тип E",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "J",
-          desc: "Тип J",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "K",
-          desc: "Тип K",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "N",
-          desc: "Тип N",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "R",
-          desc: "Тип R",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "S",
-          desc: "Тип S",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "T",
-          desc: "Тип T",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Тип термопары канал CH5",
-      default: 3,
-      variants: [
-        {
-          name: "x",
-          desc: "Без термопары",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "E",
-          desc: "Тип E",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "J",
-          desc: "Тип J",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "K",
-          desc: "Тип K",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "N",
-          desc: "Тип N",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "R",
-          desc: "Тип R",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "S",
-          desc: "Тип S",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "T",
-          desc: "Тип T",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Тип термопары канал CH6",
-      default: 3,
-      variants: [
-        {
-          name: "x",
-          desc: "Без термопары",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "E",
-          desc: "Тип E",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "J",
-          desc: "Тип J",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "K",
-          desc: "Тип K",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "N",
-          desc: "Тип N",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "R",
-          desc: "Тип R",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "S",
-          desc: "Тип S",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "T",
-          desc: "Тип T",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Тип термопары канал CH7",
-      default: 3,
-      variants: [
-        {
-          name: "x",
-          desc: "Без термопары",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "E",
-          desc: "Тип E",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "J",
-          desc: "Тип J",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "K",
-          desc: "Тип K",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "N",
-          desc: "Тип N",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "R",
-          desc: "Тип R",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "S",
-          desc: "Тип S",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "T",
-          desc: "Тип T",
+          name: "8",
+          desc: "8 каналов",
           price: 777,
         } as IOptionVariant,
       ],
