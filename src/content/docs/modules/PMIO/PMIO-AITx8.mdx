@@ -3,7 +3,8 @@ title: PMIO-AITx8
 description: Модуль для подключения 8 термопар.
 ---
 
-import Options  from '../../../../components/Options.astro';
+import { Icon } from '@astrojs/starlight/components';
+import Options  from '@components/Options.astro';
 
 import ExtConn from "./PMIO-AITx8/ext_conn.svg";
 import Schematic from "./PMIO-AITx8/schematic.svg";
@@ -50,6 +51,16 @@ import { options_config } from './PMIO-AITx8/options.ts';
 
 **ESP32-C3** передаёт данные на CAN-шину через CAN-трансивер **CA-IS3050** [^4].
 
+Для компенсации температуры холодного спая на плате установлен датчик температуры **TMP75**. Адрес датчика на шине I²C - 0x4C (A2=true, A1=false, A0=false).
+
+## Ссылки
+
+| Название | Скачать | Ссылка |
+| --- | --- | --- |
+| **ADS1115** даташит | [Скачать](/datasheets/ads1115.pdf) | [Ссылка](https://www.ti.com/product/ADS1115) |
+| **TMP75** даташит | [Скачать](/datasheets/tmp75.pdf) | [Ссылка](https://www.ti.com/product/TMP75) |
+| A Basic Guide to Thermocouple Measurements. SBAA274A, Texas Instruments | [Скачать](/datasheets/SBAA274A.pdf) | [Ссылка](https://www.ti.com/lit/an/sbaa274a/sbaa274a.pdf) |
+| Thermocouple Cold Junction Compensation. Renesas | [Скачать](/datasheets/SLG47011.pdf) | [Ссылка](https://www.renesas.com/en/document/apn/cm-389-thermocouple-cold-junction-compensation) |
 
 
 [^1]: **MAX31855** - https://www.analog.com/en/products/max31855.html
