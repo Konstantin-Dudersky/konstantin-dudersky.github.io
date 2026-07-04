@@ -18,6 +18,8 @@ import { options_config } from './PMIO-AITx8/options.ts';
 
 <ExtConn />
 
+К модулю не нужно подключать внешнее питание. Через клеммник XD02 выводится питание 3.3В от внутреннего источника.
+
 ## Конфигурация
 
 <Options options_config = {options_config} />
@@ -31,15 +33,24 @@ import { options_config } from './PMIO-AITx8/options.ts';
 
 <Schematic />
 
-На плате установлен микроконтроллер **ESP32-C3** [^2], который опрашивает АЦП по интерфейсу SPI и отправляет данные во внутреннюю шину IBus через CAN-шину.
+В качестве АЦП используется микросхема **ADS1115**. Используется дифференциальное подключение, к одному чипу ADS1115 можно подключить 2 канала измерения термопар.
 
-Перед опросом по шине SPI необходимо выбрать необходимый чип с помощью сигнала CS (Chip Select). Для этого микроконтроллер **ESP32-C3** по шине I²C управляет чипом **MCP23017** [^3].
+**ADS1115** управляются по шине I²C. Адреса чипов - `0x48`, `0x49`, `0x4A` и `0x4B`.
+
+На плате есть разъём для подключения модуля светодиодов [PMLD-10](/modules/pmld/pmld-10). Для управления состоянием светодиодов используется GPIO-расширитель **MCP23017**. Адрес на шине I²C - `0x20`.
+
+Для компенсации температуры холодного спая на плате установлен датчик температуры **TMP75**. Адрес датчика на шине I²C - `0x4C`.
+
+Для управления всеми чипами используется микроконтроллер **ESP32-C3**. Микроконтроллер:
+
+- опрашивает АЦП **ADS1115** по шине I²C
+- опрашивает датчик температуры холодного спая
+- определяет по таблицам из стандарта МЭК 60584 значение температур по каналам
+- устанавливает состояние светодиодов на модуле PMLD-10
+- отправляет данные измерений температур на CAN-шину
 
 Распиновка микроконтроллера **ESP32-C3**:
 
-- SPI
-  - MISO - GPIO 0
-  - SCK - GPIO 1
 - I²C:
   - SDA - GPIO 8
   - SCL - GPIO 2
@@ -47,24 +58,18 @@ import { options_config } from './PMIO-AITx8/options.ts';
   - RX - GPIO 10
   - TX - GPIO 7
 
-**ESP32-C3** передаёт данные на CAN-шину через CAN-трансивер **CA-IS3050** [^4].
+**ESP32-C3** передаёт данные на CAN-шину через CAN-трансивер **CA-IS3050**.
 
-Для компенсации температуры холодного спая на плате установлен датчик температуры **TMP75**. Адрес датчика на шине I²C - 0x4C (A2=true, A1=false, A0=false).
+
 
 ## Ссылки
 
-| Название | Скачать | Ссылка |
+|  |  |  |
 | --- | --- | --- |
 | **ADS1115** даташит | [Скачать](/datasheets/ads1115.pdf) | [Ссылка](https://www.ti.com/product/ADS1115) |
+| **CA-IS3050** даташит | [Скачать](/datasheets/CA-IS3050.pdf) | [Ссылка](https://e.chipanalog.com/products/interface/isolated/ict/722) |
+| **ESP32-C3** даташит | [Скачать](/datasheets/ESP32-C3.pdf) | [Ссылка](https://www.espressif.com/en/products/socs/esp32-c3) |
+| **MCP23017** даташит | [Скачать](/datasheets/MCP23017.pdf) | [Ссылка](https://www.microchip.com/en-us/product/mcp23017) |
 | **TMP75** даташит | [Скачать](/datasheets/tmp75.pdf) | [Ссылка](https://www.ti.com/product/TMP75) |
 | A Basic Guide to Thermocouple Measurements. SBAA274A, Texas Instruments | [Скачать](/datasheets/SBAA274A.pdf) | [Ссылка](https://www.ti.com/lit/an/sbaa274a/sbaa274a.pdf) |
 | Thermocouple Cold Junction Compensation. Renesas | [Скачать](/datasheets/SLG47011.pdf) | [Ссылка](https://www.renesas.com/en/document/apn/cm-389-thermocouple-cold-junction-compensation) |
-
-
-[^1]: **MAX31855** - https://www.analog.com/en/products/max31855.html
-
-[^2]: **ESP32-C3** - https://www.espressif.com/en/products/socs/esp32-c3
-
-[^3]: **MCP23017** - https://www.microchip.com/en-us/product/mcp23017.
-
-[^4]: **CA-IS3050** - https://e.chipanalog.com/products/interface/isolated/ict/722
