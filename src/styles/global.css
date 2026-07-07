@@ -1,7 +1,8 @@
 /* Reset core MathML display elements */
 math {
     display: inline-math;
-    font-family: "Latin Modern Math", "STIX Two Math", math;
+    /*font-family: "STIX Two Math", "Latin Modern Math", math;*/
+    font-family: "STIX Two Math", math;
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
