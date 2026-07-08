@@ -4,16 +4,25 @@ description: Модуль для подключения 8 датчиков 0-10 
 ---
 
 import Options  from '@components/Options.astro';
-import ExtConn from "./PMIO-AITx8/ext_conn.svg";
-import Schematic from "./PMIO-AITx8/schematic.svg";
+import ExtConn from "./PMIO-AIVx8/ext_conn.svg";
+import Schematic from "./PMIO-AIVx8/schematic.svg";
 import { options_config } from './PMIO-AIVx8/options.ts';
-
 import VoltageChannel from "./PMIO-AIVx8/kicad_images-pmio_aiv_voltage_channel.svg";
 import CurrentChannel from "./PMIO-AIVx8/kicad_images-pmio_aiv_current_channel.svg";
 
 <p>
     { frontmatter.description }
 </p>
+
+## Схема внешних подключений
+
+<ExtConn/>
+
+На рисунке отображена схема внешних подключений.
+
+К клеммнику XD01 подключается питание от внешнего блока питания.
+
+На схеме показано подключение датчиков 0-20 мА и 0-10 В.
 
 ## Конфигурация
 
@@ -25,6 +34,36 @@ import CurrentChannel from "./PMIO-AIVx8/kicad_images-pmio_aiv_current_channel.s
 ![PMIO-AIVx8 - вид снизу](./PMIO-AIVx8/render_x0y180z0.png)
 
 ## Описание
+
+<Schematic />
+
+На рисунке отображена функциональная схема модуля.
+
+В качестве АЦП используется микросхема **ADS1115**. К одному АЦП можно подключить 4 канала.
+
+**ADS1115** управляются по шине I²C. Адреса чипов - 0x48 и 0x49.
+
+На плате есть разъём для подключения модуля светодиодов [PMLD-10](/modules/pmld/pmld-10). Для управления состоянием светодиодов используется GPIO-расширитель **MCP23017**. Адрес на шине I²C - `0x20`.
+
+Для управления всеми чипами используется микроконтроллер **ESP32-C3**. Микроконтроллер:
+
+- опрашивает АЦП **ADS1115** по шине I²C
+- опрашивает датчик температуры холодного спая
+- определяет по таблицам из стандарта МЭК 60584 значение температур по каналам
+- устанавливает состояние светодиодов на модуле PMLD-10
+- отправляет данные измерений температур на CAN-шину
+
+Распиновка микроконтроллера **ESP32-C3**:
+
+- I²C:
+  - SDA - GPIO 8
+  - SCL - GPIO 4
+- CAN:
+  - RX - GPIO 1
+  - TX - GPIO 0
+
+**ESP32-C3** передаёт данные на CAN-шину через CAN-трансивер **CA-IS3050**.
+
 
 ### Схема канала 0-10 В
 
@@ -48,7 +87,7 @@ $ V = \frac{V_{input} \cdot R_{602}}{R_{602} + R_{603}} = \frac{10 В \cdot 220 
 
 $ f = \frac{1}{2 \pi \cdot R_{601} \cdot C_{601}} = \frac{1}{2 \pi \cdot 330 Ом \cdot 10^{-6} Ф} = 482 Гц $
 
-### Схема канала 4-20 мА
+### Схема канала 0-20 мА
 
 <CurrentChannel width={700} height={280}  preserveAspectRatio="xMidYMax meet"/>
 
