@@ -1,0 +1,107 @@
+---
+title: Настройка модуля
+description: Описание подключения к модулю с микроконтроллером ESP32-C3
+---
+
+import { Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+
+Для подключения и настройки модуля выполняется с помощью утилиты **espflash**.
+
+<Steps>
+
+1. Перейти в репозиторий [GitHub](https://github.com/esp-rs/espflash/releases).
+
+2. Необходимо скачать исполняемый файл актуальной версии для своей операционной системы:
+
+    <Tabs syncKey="os">
+        <TabItem label="Linux">
+            `espflash-x86_64-unknown-linux-gnu.zip`
+        </TabItem>
+        <TabItem label="Windows">
+            `espflash-x86_64-pc-windows-msvc.zip`
+        </TabItem>
+    </Tabs>
+
+3. Распаковываем архив. Утилита работает без установки. Можно прописать путь к переменной среды **PATH** для удобства запуска.
+
+4. Подключаем модуль к компьютеру через USB-кабель. Подаём питание на модуль.
+
+5. Запускаем терминал. Если не редактировали переменную среды **PATH**, то переходим в каталог с распакованной программой **espflash** и запускаем:
+
+    <Tabs syncKey="os">
+        <TabItem label="Linux">
+            ```sh
+            espflash monitor
+            ```
+        </TabItem>
+        <TabItem label="Windows">
+            ```sh
+            espflash.exe monitor
+            ```
+        </TabItem>
+    </Tabs>
+
+6. В терминале выведется примерно следующее:
+
+    <Tabs syncKey="os">
+        <TabItem label="Linux">
+            ```sh
+            [2026-07-11T07:21:01Z INFO ] Serial port: '/dev/ttyACM0'
+            [2026-07-11T07:21:01Z INFO ] Connecting...
+            [2026-07-11T07:21:01Z INFO ] Using flash stub
+            Commands:
+                CTRL+R    Reset chip
+                CTRL+C    Exit
+            ```
+        </TabItem>
+        <TabItem label="Windows">
+            ```sh
+            [2026-07-11T07:10:59Z INFO ] Serial port: 'COM6'
+            [2026-07-11T07:10:59Z INFO ] Connecting...
+            [2026-07-11T07:11:00Z INFO ] Using flash stub
+            Commands:
+                CTRL+R    Reset chip
+                CTRL+C    Exit
+            ```
+        </TabItem>
+    </Tabs>
+
+    Это значит, что соединение с модулем установлено.
+
+7. Нажимаем `CTRL+R` в терминале. При этом микроконтроллер перезагрузится.
+
+8. Когда в терминале появится сообщение:
+
+    ```
+    Нажмите BOOT для изменения настроек
+    ```
+
+    то необходимо в течение 5 секунд нажать кнопку BOOT на модуле. Если не нажать, то микроконтроллер продолжит обычную загрузку.
+
+9. Далее необходимо выполнить необходиму настройку. Перечень настроек зависит от конкретного модуля. Для вывода справки введите в терминале:
+
+    ```sh
+    config --help
+    ```
+
+    Для вывода справки по конкретной команде (например, `config can`), введите:
+
+    ```sh
+    config can --help
+    ```
+
+10. Для сохранения настроек введите команду:
+
+    ```sh
+    config save
+    ```
+
+11. Для выхода без сохранения настроек введите:
+
+    ```sh
+    config exit
+    ```
+
+    Можно просто перезагрузить модуль.
+
+</Steps>

@@ -50,6 +50,11 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "modules", collapsed: true } }],
         },
         {
+          label: "Настройка",
+          collapsed: true,
+          items: [{ autogenerate: { directory: "settings", collapsed: true } }],
+        },
+        {
           label: "Контакты",
           link: "/contacts/",
         },
