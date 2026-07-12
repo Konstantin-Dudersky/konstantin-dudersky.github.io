@@ -2,8 +2,12 @@
 title: PMIO-AIVx8
 description: Модуль для подключения 8 датчиков 0-10 В или 0-20 мА.
 ---
+import { Zoom } from "starlight-image-zoom/components";
 
 import Options  from '@components/Options.astro';
+import PcbRender  from '@components/PcbRender.astro';
+
+
 import ExtConn from "./PMIO-AIVx8/ext_conn.svg";
 import Schematic from "./PMIO-AIVx8/schematic.svg";
 import { options_config } from './PMIO-AIVx8/options.ts';
@@ -16,7 +20,9 @@ import CurrentChannel from "./PMIO-AIVx8/kicad_images-pmio_aiv_current_channel.s
 
 ## Схема внешних подключений
 
-<ExtConn/>
+<Zoom label="Схема внешних подключений">
+    <ExtConn/>
+</Zoom>
 
 На рисунке отображена схема внешних подключений.
 
@@ -30,12 +36,20 @@ import CurrentChannel from "./PMIO-AIVx8/kicad_images-pmio_aiv_current_channel.s
 
 ## Внешний вид
 
-![PMIO-AIVx8 - вид сверху](./PMIO-AIVx8/render_x0y0z0.png)
-![PMIO-AIVx8 - вид снизу](./PMIO-AIVx8/render_x0y180z0.png)
+import render_top from "./PMIO-AIVx8/render_x0y0z0.png";
+import render_bottom from "./PMIO-AIVx8/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
 
 ## Описание
 
-<Schematic />
+<Zoom label="Функциональная схема модуля">
+    <Schematic />
+</Zoom>
 
 На рисунке отображена функциональная схема модуля.
 

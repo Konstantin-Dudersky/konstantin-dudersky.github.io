@@ -3,6 +3,7 @@ title: PMIF-I2Cx8
 description: Модуль для подключения периферийных устройств по интерфейсу I²C.
 ---
 import Options  from '@components/Options.astro';
+import PcbRender  from '@components/PcbRender.astro';
 
 import ExtConn from "./PMIF-I2Cx8/ext_conn.svg";
 import Schematic from "./PMIF-I2Cx8/schematic.svg";
@@ -62,8 +63,14 @@ import { options_config } from './PMIF-I2Cx8/options.ts';
 
 ## Внешний вид
 
-![PMIF-I2Cx8 - вид сверху](./PMIF-I2Cx8/render_x0y0z0.png)
-![PMIF-I2Cx8 - вид снизу](./PMIF-I2Cx8/render_x0y180z0.png)
+import render_top from "./PMIF-I2Cx8/render_x0y0z0.png";
+import render_bottom from "./PMIF-I2Cx8/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
 
 ## Описание
 

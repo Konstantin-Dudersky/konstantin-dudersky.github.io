@@ -3,7 +3,8 @@ title: PMIO-RQx8
 description: Модуль для управления 8 дискретными релейными выходами.
 ---
 
-import Options  from '../../../../components/Options.astro';
+import Options  from '@components/Options.astro';
+import PcbRender  from '@components/PcbRender.astro';
 
 import Schematic from "./PMIO-RQx8/schematic.svg";
 import ExtConn from "./PMIO-RQx8/ext_conn.svg";
@@ -31,8 +32,14 @@ import { options_config } from './PMIO-RQx8/options.ts';
 
 ## Внешний вид
 
-![PMIO-RQx8 - вид сверху](./PMIO-RQx8/render_x0y0z0.png)
-![PMIO-RQx8 - вид снизу](./PMIO-RQx8/render_x0y180z0.png)
+import render_top from "./PMIO-RQx8/render_x0y0z0.png";
+import render_bottom from "./PMIO-RQx8/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
 
 ## Описание
 

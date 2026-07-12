@@ -3,6 +3,8 @@ title: PMPS-20W
 description: Модуль блока питания до 20 Вт.
 ---
 
+import PcbRender  from '@components/PcbRender.astro';
+
 <p>
     { frontmatter.description }
 </p>
@@ -15,8 +17,14 @@ description: Модуль блока питания до 20 Вт.
 
 ## Внешний вид
 
-![PMPS-20W - вид сверху](./PMPS-20W/render_x0y0z0.png)
-![PMPS-20W - вид снизу](./PMPS-20W/render_x0y180z0.png)
+import render_top from "./PMPS-20W/render_x0y0z0.png";
+import render_bottom from "./PMPS-20W/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
 
 ## Описание
 

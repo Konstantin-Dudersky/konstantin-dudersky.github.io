@@ -4,6 +4,8 @@ description: Модуль для подключения 4 тензодатчик
 ---
 
 import Options  from '@components/Options.astro';
+import PcbRender  from '@components/PcbRender.astro';
+
 import ExtConn from "./PMIO-AIWx4/ext_conn.svg";
 import Schematic from "./PMIO-AIWx4/schematic.svg";
 import { options_config } from './PMIO-AIWx4/options.ts';
@@ -26,8 +28,14 @@ import { options_config } from './PMIO-AIWx4/options.ts';
 
 ## Внешний вид
 
-![PMIO-AIWx4 - вид сверху](./PMIO-AIWx4/render_x0y0z0.png)
-![PMIO-AIWx4 - вид снизу](./PMIO-AIWx4/render_x0y180z0.png)
+import render_top from "./PMIO-AIWx4/render_x0y0z0.png";
+import render_bottom from "./PMIO-AIWx4/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
 
 ## Описание
 
