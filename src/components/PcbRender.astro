@@ -1,0 +1,37 @@
+---
+const { top, bottom, pcb_article } = Astro.props;
+
+import { Image } from "astro:assets";
+import { Zoom } from "starlight-image-zoom/components";
+
+const top_alt = `${pcb_article} - вид сверху`;
+const bottom_alt = `${pcb_article} - вид снизу`;
+---
+
+<style>
+    .pcb-render {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .pcb-render .column {
+        flex: 1;
+        margin: 0px;
+    }
+</style>
+
+<div class="pcb-render">
+    <div class="column">
+        <Zoom label={top_alt}>
+            <Image src={top} alt={top_alt} />
+        </Zoom>
+    </div>
+
+    <div class="column">
+        <Zoom label={bottom_alt}>
+            <Image src={bottom} alt={bottom_alt} />
+        </Zoom>
+    </div>
+</div>

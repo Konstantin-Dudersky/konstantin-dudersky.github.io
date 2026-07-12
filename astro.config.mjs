@@ -3,7 +3,7 @@ import { defineConfig, svgoOptimizer } from "astro/config";
 import starlight from "@astrojs/starlight";
 import { unified } from "@astrojs/markdown-remark";
 import starlightImageZoom from 'starlight-image-zoom'
-
+import starlightLinksValidator from 'starlight-links-validator'
 
 import starlightScrollToTop from "starlight-scroll-to-top";
 import remarkMath from "remark-math";
@@ -72,7 +72,7 @@ export default defineConfig({
       components: {
         Header: "./src/components/Header.astro",
       },
-      plugins: [starlightScrollToTop(), starlightThemeNord(), starlightImageZoom()],
+      plugins: [starlightScrollToTop(), starlightThemeNord(), starlightImageZoom(), starlightLinksValidator()],
       credits: true,
     }),
   ],
