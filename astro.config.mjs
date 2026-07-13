@@ -10,6 +10,8 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import starlightThemeNord from "starlight-theme-nord";
 import starlightSidebarTopics from 'starlight-sidebar-topics'
+import md3Theme from 'starlight-theme-md3';
+
 
 
 // https://astro.build/config
@@ -50,7 +52,7 @@ export default defineConfig({
       components: {
         Header: "./src/components/Header.astro",
       },
-      plugins: [starlightScrollToTop(), starlightThemeNord(), starlightImageZoom(), starlightLinksValidator(),
+      plugins: [starlightScrollToTop(), md3Theme({}), starlightImageZoom(), starlightLinksValidator(),
         starlightSidebarTopics([
           {
             label: "Модули",
