@@ -68,6 +68,7 @@ export default defineConfig({
                 items: [
                    "modules/settings/module_config",
                    "modules/settings/can_literature",
+                   "modules/settings/can_dbc",
                 ],
               },
             ],
