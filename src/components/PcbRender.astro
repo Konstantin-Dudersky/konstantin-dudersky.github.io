@@ -6,6 +6,8 @@ import { Zoom } from "starlight-image-zoom/components";
 
 const top_alt = `${pcb_article} - вид сверху`;
 const bottom_alt = `${pcb_article} - вид снизу`;
+
+const step = `https://disk.yandex.ru/d/RpAkCNVVWayxYg/${pcb_article}.step`;
 ---
 
 <style>
@@ -35,3 +37,5 @@ const bottom_alt = `${pcb_article} - вид снизу`;
         </Zoom>
     </div>
 </div>
+
+<a href={step}>Скачать 3D STEP</a>

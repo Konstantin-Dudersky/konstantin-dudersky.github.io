@@ -2,13 +2,15 @@
 import { defineConfig, svgoOptimizer } from "astro/config";
 import starlight from "@astrojs/starlight";
 import { unified } from "@astrojs/markdown-remark";
+
 import starlightImageZoom from 'starlight-image-zoom'
 import starlightLinksValidator from 'starlight-links-validator'
-
 import starlightScrollToTop from "starlight-scroll-to-top";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import starlightThemeNord from "starlight-theme-nord";
+import starlightSidebarTopics from 'starlight-sidebar-topics'
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -37,30 +39,6 @@ export default defineConfig({
         "@fontsource/stix-two-math",
         "@fontsource/pt-sans",
       ],
-      sidebar: [
-        {
-          label: "Весоизмерительные системы",
-          link: "/weight/",
-        },
-        {
-          label: "Распределённая периферия",
-          link: "/distributed/",
-        },
-        {
-          label: "Модули",
-          collapsed: true,
-          items: [{ autogenerate: { directory: "modules", collapsed: true } }],
-        },
-        {
-          label: "Настройка",
-          collapsed: true,
-          items: [{ autogenerate: { directory: "settings", collapsed: true } }],
-        },
-        {
-          label: "Контакты",
-          link: "/contacts/",
-        },
-      ],
       locales: {
         root: {
           label: "Russian",
@@ -72,7 +50,45 @@ export default defineConfig({
       components: {
         Header: "./src/components/Header.astro",
       },
-      plugins: [starlightScrollToTop(), starlightThemeNord(), starlightImageZoom(), starlightLinksValidator()],
+      plugins: [starlightScrollToTop(), starlightThemeNord(), starlightImageZoom(), starlightLinksValidator(),
+        starlightSidebarTopics([
+          {
+            label: "Модули",
+            link: '/modules/overview',
+            items: [
+              "modules/overview",
+              {
+                label: "Описание",
+                collapsed: true,
+                items: [{ autogenerate: { directory: "modules/description", collapsed: true } }]
+              },
+              {
+                label: "Настройка",
+                collapsed: true,
+                items: [
+                   "modules/settings/module_config",
+                   "modules/settings/can_literature",
+                ],
+              },
+            ],
+          },
+          {
+            label: "Весоизмерительные системы",
+            link: "/weight/",
+            items: [],
+          },
+          {
+            label: "Распределённая периферия",
+            link: "/distributed/",
+            items: [],
+          },
+          {
+            label: "Контакты",
+            link: "/contacts/",
+            items: [],
+          },
+        ],),
+      ],
       credits: true,
     }),
   ],

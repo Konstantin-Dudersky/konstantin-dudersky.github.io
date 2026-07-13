@@ -21,6 +21,7 @@
     "starlight-image-zoom": "^0.15.0",
     "starlight-links-validator": "^0.25.2",
     "starlight-scroll-to-top": "^1.0.1",
+    "starlight-sidebar-topics": "^0.8.0",
     "starlight-theme-nord": "^0.1.4"
   }
 }

@@ -7,29 +7,29 @@ sidebar:
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-import { frontmatter as PMCP_ESP32C3 } from './PMCP/PMCP-ESP32C3.mdx';
-import { frontmatter as PMCP_LLP } from './PMCP/PMCP-LLP.mdx';
+import { frontmatter as PMCP_ESP32C3 } from './description/PMCP-ESP32C3.mdx';
+import { frontmatter as PMCP_LLP } from './description/PMCP-LLP.mdx';
 
-import { frontmatter as PMDR_BLDC } from './PMDR/PMDR-BLDC.mdx';
-import { frontmatter as PMDR_STEPx4 } from './PMDR/PMDR-STEPx4.mdx';
+import { frontmatter as PMDR_BLDC } from './description/PMDR-BLDC.mdx';
+import { frontmatter as PMDR_STEPx4 } from './description/PMDR-STEPx4.mdx';
 
-import { frontmatter as PMIF_1Wire } from './PMIF/PMIF-1Wire.mdx';
-import { frontmatter as PMIF_I2Cx8 } from './PMIF/PMIF-I2Cx8.mdx';
+import { frontmatter as PMIF_1Wire } from './description/PMIF-1Wire.mdx';
+import { frontmatter as PMIF_I2Cx8 } from './description/PMIF-I2Cx8.mdx';
 
-import { frontmatter as PMIO_AIRx4 } from './PMIO/PMIO-AIRx4.mdx';
-import { frontmatter as PMIO_AITx8 } from './PMIO/PMIO-AITx8.mdx';
-import { frontmatter as PMIO_AIVx8 } from './PMIO/PMIO-AIVx8.mdx';
-import { frontmatter as PMIO_AIWx4 } from './PMIO/PMIO-AIWx4.mdx';
-import { frontmatter as PMIO_DIx32 } from './PMIO/PMIO-DIx32.mdx';
-import { frontmatter as PMIO_DQx16 } from './PMIO/PMIO-DQx16.mdx';
-import { frontmatter as PMIO_INA226x4 } from './PMIO/PMIO-INA226x4.mdx';
-import { frontmatter as PMIO_PWMx16 } from './PMIO/PMIO-PWMx16.mdx';
-import { frontmatter as PMIO_RQx8 } from './PMIO/PMIO-RQx8.mdx';
+import { frontmatter as PMIO_AIRx4 } from './description/PMIO-AIRx4.mdx';
+import { frontmatter as PMIO_AITx8 } from './description/PMIO-AITx8.mdx';
+import { frontmatter as PMIO_AIVx8 } from './description/PMIO-AIVx8.mdx';
+import { frontmatter as PMIO_AIWx4 } from './description/PMIO-AIWx4.mdx';
+import { frontmatter as PMIO_DIx32 } from './description/PMIO-DIx32.mdx';
+import { frontmatter as PMIO_DQx16 } from './description/PMIO-DQx16.mdx';
+import { frontmatter as PMIO_INA226x4 } from './description/PMIO-INA226x4.mdx';
+import { frontmatter as PMIO_PWMx16 } from './description/PMIO-PWMx16.mdx';
+import { frontmatter as PMIO_RQx8 } from './description/PMIO-RQx8.mdx';
 
-import { frontmatter as PMLD_10 } from './PMLD/PMLD-10.mdx';
-import { frontmatter as PMLD_18 } from './PMLD/PMLD-18.mdx';
+import { frontmatter as PMLD_10 } from './description/PMLD-10.mdx';
+import { frontmatter as PMLD_18 } from './description/PMLD-18.mdx';
 
-import { frontmatter as PMPS_20W } from './PMPS/PMPS-20W.mdx';
+import { frontmatter as PMPS_20W } from './description/PMPS-20W.mdx';
 
 Линейка модулей, по аналогии с модулями промышленных контроллеров. Протокол обмена данными между модулями - CAN2.0.
 
@@ -69,13 +69,13 @@ import { frontmatter as PMPS_20W } from './PMPS/PMPS-20W.mdx';
 <CardGrid>
   <LinkCard
       title={ PMCP_ESP32C3.title }
-      href="/modules/pmcp/pmcp-esp32c3"
+      href="/modules/description/pmcp-esp32c3"
       description={ PMCP_ESP32C3.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMCP_LLP.title }
-      href="/modules/pmcp/pmcp-llp"
+      href="/modules/description/pmcp-llp"
       description={ PMCP_LLP.description }
   >
   </LinkCard>
@@ -86,7 +86,7 @@ import { frontmatter as PMPS_20W } from './PMPS/PMPS-20W.mdx';
 <CardGrid>
   <LinkCard
       title={ PMPS_20W.title }
-      href="/modules/pmps/pmps-20w"
+      href="/modules/description/pmps-20w"
       description={ PMPS_20W.description }
   >
   </LinkCard>
@@ -97,55 +97,55 @@ import { frontmatter as PMPS_20W } from './PMPS/PMPS-20W.mdx';
 <CardGrid>
   <LinkCard
       title={ PMIO_AIRx4.title }
-      href="/modules/pmio/pmio-airx4"
+      href="/modules/description/pmio-airx4"
       description={ PMIO_AIRx4.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIO_AITx8.title }
-      href="/modules/pmio/pmio-aitx8"
+      href="/modules/description/pmio-aitx8"
       description={ PMIO_AITx8.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIO_AIVx8.title }
-      href="/modules/pmio/pmio-aivx8"
+      href="/modules/description/pmio-aivx8"
       description={ PMIO_AIVx8.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIO_AIWx4.title }
-      href="/modules/pmio/pmio-aiwx4"
+      href="/modules/description/pmio-aiwx4"
       description={ PMIO_AIWx4.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIO_DIx32.title }
-      href="/modules/pmio/pmio-dix32"
+      href="/modules/description/pmio-dix32"
       description={ PMIO_DIx32.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIO_DQx16.title }
-      href="/modules/pmio/pmio-dqx16"
+      href="/modules/description/pmio-dqx16"
       description={ PMIO_DQx16.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIO_INA226x4.title }
-      href="/modules/pmio/pmio-ina226x4"
+      href="/modules/description/pmio-ina226x4"
       description={ PMIO_INA226x4.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIO_PWMx16.title }
-      href="/modules/pmio/pmio-pwmx16"
+      href="/modules/description/pmio-pwmx16"
       description={ PMIO_PWMx16.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIO_RQx8.title }
-      href="/modules/pmio/pmio-rqx8"
+      href="/modules/description/pmio-rqx8"
       description={ PMIO_RQx8.description }
   >
   </LinkCard>
@@ -156,13 +156,13 @@ import { frontmatter as PMPS_20W } from './PMPS/PMPS-20W.mdx';
 <CardGrid>
   <LinkCard
       title={ PMIF_1Wire.title }
-      href="/modules/pmif/pmif-1wire"
+      href="/modules/description/pmif-1wire"
       description={ PMIF_1Wire.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMIF_I2Cx8.title }
-      href="/modules/pmif/pmif-i2cx8"
+      href="/modules/description/pmif-i2cx8"
       description={ PMIF_I2Cx8.description }
   >
   </LinkCard>
@@ -173,13 +173,13 @@ import { frontmatter as PMPS_20W } from './PMPS/PMPS-20W.mdx';
 <CardGrid>
   <LinkCard
       title={ PMDR_BLDC.title }
-      href="/modules/pmdr/pmdr-bldc"
+      href="/modules/description/pmdr-bldc"
       description={ PMDR_BLDC.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMDR_STEPx4.title }
-      href="/modules/pmdr/pmdr-stepx4"
+      href="/modules/description/pmdr-stepx4"
       description={ PMDR_STEPx4.description }
   >
   </LinkCard>
@@ -190,13 +190,13 @@ import { frontmatter as PMPS_20W } from './PMPS/PMPS-20W.mdx';
 <CardGrid>
   <LinkCard
       title={ PMLD_10.title }
-      href="/modules/pmld/pmld-10"
+      href="/modules/description/pmld-10"
       description={ PMLD_10.description }
   >
   </LinkCard>
   <LinkCard
       title={ PMLD_18.title }
-      href="/modules/pmld/pmld-18"
+      href="/modules/description/pmld-18"
       description={ PMLD_18.description }
   >
   </LinkCard>
