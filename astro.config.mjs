@@ -52,7 +52,13 @@ export default defineConfig({
       components: {
         Header: "./src/components/Header.astro",
       },
-      plugins: [starlightScrollToTop(), md3Theme({}), starlightImageZoom(), starlightLinksValidator(),
+      plugins: [starlightScrollToTop(),
+        md3Theme({
+          density: "comfortable",
+          // preset: "highContrast"
+        }),
+        starlightImageZoom(),
+        starlightLinksValidator(),
         starlightSidebarTopics([
           {
             label: "Модули",
