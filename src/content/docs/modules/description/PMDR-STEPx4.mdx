@@ -1,6 +1,6 @@
 ---
 title: PMDR-STEPx4
-description: Модуль управления шаговыми двигателями.
+description: Модуль управления шаговыми двигателями по CAN-шине.
 ---
 
 import PcbRender  from '@components/PcbRender.astro';
@@ -9,6 +9,32 @@ import PcbRender  from '@components/PcbRender.astro';
     { frontmatter.description }
 </p>
 
-## Описание
+Можно подключить до 4 шаговых двигателей.
+
+Основные параметры:
+
+- диапазон напряжения 4.5-48 В
+- ток до 2,5 А
+- микрошаг до 1/256
 
 ## Конфигурация
+
+## Внешний вид
+
+import render_top from "./PMDR-STEPx4/render_x0y0z0.png";
+import render_bottom from "./PMDR-STEPx4/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
+
+
+## Описание
+
+## Ссылки
+
+|  |  |  |
+| --- | --- | --- |
+| **DRV8834S** даташит | [Скачать](/datasheets/drv8434s.pdf) | [Ссылка](https://www.ti.com/product/DRV8434S) |

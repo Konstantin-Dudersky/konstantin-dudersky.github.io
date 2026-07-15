@@ -25,7 +25,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: "Электроника",
+      title: "Электронные модули",
       logo: {
         src: "./public/flat-color-icons--electronics.svg",
       },
@@ -54,6 +54,7 @@ export default defineConfig({
       },
       plugins: [starlightScrollToTop(),
         md3Theme({
+          // seed: "#27293a",
           density: "comfortable",
           // preset: "highContrast"
         }),
