@@ -24,6 +24,20 @@ export interface IOptionsConfig {
 }
 ---
 
+<style>
+    #option_copy_message {
+        display: none;
+        color: var(--md-sys-color-on-primary-container);
+        background: var(--md-sys-color-primary-container);
+        padding: 6px 12px;
+        border-radius: 4px;
+        margin-top: 8px;
+        margin-left: 8px;
+        font-size: 14px;
+        transition: opacity 1s;
+    }
+</style>
+
 <p>
     Заданная конфигурация: <b><code id="option_variant_config" style="font-size: 1rem;"></code></b>
     <button
@@ -31,8 +45,9 @@ export interface IOptionsConfig {
         style="background-color: transparent; border: 0px;"
         title="Копировать в буфер"
     >
-        <span class="material-symbols--content-copy-outline-rounded"></span></button
-    >
+        <span class="material-symbols--content-copy-outline-rounded"></span>
+    </button>
+    <span id="option_copy_message"> Скопировано </span>
 </p>
 
 <p>Стоимость: <b><code id="price" style="font-size: 1rem;"></code> $</b></p>
@@ -115,11 +130,20 @@ export interface IOptionsConfig {
         navigator.clipboard.writeText(text).then(
             function () {
                 console.log("Copy " + text + " to clipboard");
+                const message = document.getElementById("option_copy_message");
+                showMessage(message);
             },
             function (err) {
                 console.error("Async: Could not copy text: ", err);
             },
         );
+    }
+
+    function showMessage(element) {
+        element.style.display = "inline";
+        setTimeout(() => {
+            element.style.display = "none";
+        }, 1500);
     }
 
     addEventListener("DOMContentLoaded", (event) => {
