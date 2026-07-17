@@ -1,0 +1,46 @@
+---
+title: EKDR-STEPx4
+description: Модуль управления шаговыми двигателями по CAN-шине.
+---
+
+import PcbRender  from '@components/PcbRender.astro';
+
+<p>
+    { frontmatter.description }
+</p>
+
+Можно подключить до 4 шаговых двигателей.
+
+Основные параметры:
+
+- диапазон напряжения работы 4.5-48 В, для разных каналов можно использовать разное напряжение;
+- ток до 2,5 А;
+- микрошаг до 1/256.
+
+В качестве драйвера для двигателя используется чип **DRV8834S**.
+
+## Схема внешних подключений
+
+Для разных каналов можно использовать разное напряжение. Минусовой провод всех источников объединяется на модуле.
+
+## Конфигурация
+
+## Внешний вид
+
+import render_top from "./EKDR-STEPx4/render_x0y0z0.png";
+import render_bottom from "./EKDR-STEPx4/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
+
+
+## Описание
+
+## Ссылки
+
+|  |  |  |
+| --- | --- | --- |
+| **DRV8834S** даташит | [Скачать](/datasheets/drv8434s.pdf) | [Ссылка](https://www.ti.com/product/DRV8434S) |
