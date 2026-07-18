@@ -1,0 +1,44 @@
+---
+title: EKMC-ESP32C3
+description: Плата с микроконтроллером ESP32-C3, которая используется как часть модулей.
+---
+
+import PcbRender  from '@components/PcbRender.astro';
+
+<p>
+    { frontmatter.description }
+</p>
+
+Микроконтроллер подключается к чипам модуля через интерфейсы I²C и/или SPI. Для связи с контроллером используется шина CAN.
+
+Два 12-пиновых FFC-коннектора используются для последовательного соединения соседних модулей в одну цепь.
+
+Плата подключается к модулю через Pin Header. Микроконтроллер подключается к чипам модуля через интерфейсы I²C и/или SPI. В разных модулях используется разная распиновка, для получения информации смотри схему каждого модуля.
+
+На плате расположен CAN-трансивер **CA-IS3050** для подключения микроконтроллера к шине CAN. Используемые пины:
+
+- CAN RX - GPIO0
+- CAN TX - GPIO1
+
+## Схема внешних подключений
+
+## Конфигурация
+
+## Внешний вид
+
+import render_top from "./EKMC-ESP32C3/render_x0y0z0.png";
+import render_bottom from "./EKMC-ESP32C3/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
+
+
+## Описание
+
+## Ссылки
+
+| **CA-IS3050** даташит | [Скачать](/datasheets/CA-IS3050.pdf) | [Ссылка](https://e.chipanalog.com/products/interface/isolated/ict/722) |
+| **ESP32-C3** даташит | [Скачать](/datasheets/ESP32-C3.pdf) | [Ссылка](https://www.espressif.com/en/products/socs/esp32-c3) |
