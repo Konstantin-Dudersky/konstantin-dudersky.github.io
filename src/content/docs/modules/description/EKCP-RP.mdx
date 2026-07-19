@@ -1,0 +1,23 @@
+---
+title: EKCP-RP
+description: Модуль контроллера на базе одноплатника Raspberry Pi.
+---
+
+import PcbRender  from '@components/PcbRender.astro';
+
+<p>{frontmatter.description}</p>
+
+На плате есть отверстия для закрепления как полноценной Raspberry Pi, так и укороченной Raspberry Pi Zero. Также можно использовать все возможные клоны, совместимые по 40-пиновому коннектору и креплению.
+
+## Внешний вид
+
+import render_top from "./EKCP-RP/render_x0y0z0.png";
+import render_bottom from "./EKCP-RP/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
+
+| **MCP2515** даташит | [Скачать](/datasheets/MCP2515.pdf) | [Ссылка](https://www.microchip.com/en-us/product/mcp2515) |

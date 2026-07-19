@@ -9,6 +9,7 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 import { frontmatter as PMCP_ESP32C3 } from './description/PMCP-ESP32C3.mdx';
 import { frontmatter as PMCP_LLP } from './description/PMCP-LLP.mdx';
+import { frontmatter as EKCP_RP } from './description/EKCP-RP.mdx';
 
 import { frontmatter as PMDR_BLDC } from './description/PMDR-BLDC.mdx';
 import { frontmatter as EKDR_STEPx4 } from './description/EKDR-STEPx4.mdx';
@@ -64,19 +65,25 @@ import { frontmatter as PMPS_20W } from './description/PMPS-20W.mdx';
 
 ## Список модулей
 
-### Модули контроллеров (PMCP)
+### Модули контроллеров (EKCP)
 
 <CardGrid>
+    <LinkCard
+        title={ EKCP_RP.title }
+        href="/modules/description/ekcp-rp"
+        description={ EKCP_RP.description }
+    >
+    </LinkCard>
+    <LinkCard
+        title={ PMCP_LLP.title }
+        href="/modules/description/pmcp-llp"
+        description={ PMCP_LLP.description }
+    >
+    </LinkCard>
   <LinkCard
       title={ PMCP_ESP32C3.title }
       href="/modules/description/pmcp-esp32c3"
       description={ PMCP_ESP32C3.description }
-  >
-  </LinkCard>
-  <LinkCard
-      title={ PMCP_LLP.title }
-      href="/modules/description/pmcp-llp"
-      description={ PMCP_LLP.description }
   >
   </LinkCard>
 </CardGrid>
