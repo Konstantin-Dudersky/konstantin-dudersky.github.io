@@ -9,20 +9,30 @@ import PcbRender  from '@components/PcbRender.astro';
 
 На плате есть отверстия для закрепления как полноценной Raspberry Pi, так и укороченной Raspberry Pi Zero. Также можно использовать все возможные клоны, совместимые по 40-пиновому коннектору и креплению.
 
-Ссылки на некоторые совместимые платы:
+Ссылки на некоторые совместимые одноплатники:
 
-- полный форм-фактор:
-    - Raspberry Pi 5 (https://www.raspberrypi.com/products/raspberry-pi-5/)
-    - Luckfox Lyra Pi (https://www.luckfox.com/Luckfox-Lyra-Pi)
-    - Luckfox Pico Pi (https://www.luckfox.com/luckfox-pico-pi)
-- укороченный форм-фактор:
-    - Raspberry Pi Zero W (https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
-    - Luckfox Lyra Zero W (https://www.luckfox.com/Luckfox-Lyra-Zero-W)
-    - Luckfox Pico Zero (https://www.luckfox.com/Luckfox-Pico-Zero)
+- Raspberry Pi 5 (https://www.raspberrypi.com/products/raspberry-pi-5/)
+- Raspberry Pi Zero W (https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+- Luckfox Lyra (https://www.luckfox.com/Luckfox-Lyra-Pi)
+- Repka Pi (https://repka-pi.ru)
+- Banana Pi (https://banana-pi.org)
+- Orange Pi (http://www.orangepi.org/index.html)
+- Radxa (https://radxa.com)
 
 Необходимо правильно настроить функцию пинов на используемом одноплатнике.
 
-Для связи между модулями используется шина CAN 2.0. В некоторых одноплатниках есть встроенный CAN-контроллер. Для моделей без встроенного CAN-контроллера (например, Raspberry Pi) на плате располагается внешний CAN-контроллер **MCP2515**, работающий через интерфейс SPI.
+Для связи между модулями используется шина CAN 2.0. В некоторых одноплатниках есть встроенный CAN-контроллер.
+
+- Для моделей без встроенного CAN-контроллера (например, Raspberry Pi) на плате располагается внешний CAN-контроллер **MCP2515**, работающий через интерфейс SPI.
+- Для моделей со встроенным CAN-контроллером (например, Luckfox Lyra), можно установить перемычки.
+
+CAN-контроллер подключается к шине через CAN-трансивер. В модуле используется изолированный трансивер **CA-IS3050**.
+
+На модуле есть также один интерфейс RS-485. В качестве преобразователя UART / RS-485 используется чип **CA-IS3098W**. Чип обеспечивает гальваническую изоляцию шины RS-485 и остальной схемотехники модуля.
+
+В модуле устанавливается чип часов реального времени (RTC) **DS3231**. Работа часов при отсутствии питания обеспечивается батарейкой формата CR1220.
+
+В модуле есть чип Flash-памяти **W25Q32JVSSIQ** - 32 МБит, производитель Winbond. Файловую систему можно перевести в режим "только для чтения". Это повышает ресурс карты памяти и защищает её от повреждений при потере питания. Для того, чтобы была возможность хранить изменяемые данные, можно использовать данную флеш память.
 
 ## Внешний вид
 
@@ -43,4 +53,8 @@ import render_bottom from "./EKCP-RP/render_x0y180z0.png";
 
 |  |  |  |
 | --- | --- | --- |
+| **CA-IS3050** даташит | [Скачать](/datasheets/CA-IS3050.pdf) | [Ссылка](https://e.chipanalog.com/products/interface/isolated/ict/722) |
+| **CA-IS3098W** даташит | | |
+| **DS3231** даташит | |
 | **MCP2515** даташит | [Скачать](/datasheets/MCP2515.pdf) | [Ссылка](https://www.microchip.com/en-us/product/mcp2515) |
+| **W25Q32JVSSIQ** даташит | | |
