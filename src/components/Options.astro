@@ -71,7 +71,8 @@ export interface IOptionsConfig {
                                 style="margin-right: 10px;"
                             />
                             <label for={"option_" + o_index.toString() + "_" + ov_index.toString()}>
-                                {ov.desc} (+{ov.price.toFixed(1)} $)
+                                {ov.desc} (+{"TODO"} $)
+                                <!-- (+{ov.price.toFixed(1)} $) -->
                             </label>
                         </div>
                     ))}
@@ -115,6 +116,7 @@ export interface IOptionsConfig {
         });
 
         document.querySelector("#price").textContent = price.toFixed(1);
+        document.querySelector("#price").textContent = "TODO"; // delete
 
         let option_string = option_variants.join("/");
         document.querySelector("#option_variant_config").textContent = option_string;
