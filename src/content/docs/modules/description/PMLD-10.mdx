@@ -3,10 +3,16 @@ title: PMLD-10
 description: Модуль отображения состояния 10 сигналов.
 ---
 
+import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
+
+import { options_config } from './PMLD-10/options.ts';
+
 
 <p>
     { frontmatter.description }
 </p>
 
 ## Конфигурация
+
+<Options options_config = {options_config} />
