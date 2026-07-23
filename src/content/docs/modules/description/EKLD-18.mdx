@@ -1,0 +1,23 @@
+---
+title: EKLD-18
+description: Модуль отображения состояния 18 сигналов.
+---
+
+import PcbRender  from '@components/PcbRender.astro';
+
+<p>
+    { frontmatter.description }
+</p>
+
+## Конфигурация
+
+## Внешний вид
+
+import render_top from "./EKLD-18/render_x0y0z0.png";
+import render_bottom from "./EKLD-18/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
