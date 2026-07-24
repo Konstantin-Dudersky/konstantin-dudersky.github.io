@@ -3,6 +3,7 @@ title: EKLD-18
 description: Модуль отображения состояния 18 сигналов.
 ---
 
+import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
 <p>
@@ -10,6 +11,12 @@ import PcbRender  from '@components/PcbRender.astro';
 </p>
 
 ## Конфигурация
+
+import { options_config } from './EKLD-18/options.ts';
+
+<Options options_config = {options_config} />
+
+Инвертированный - светодиод включается при отсутствии напряжения на входе.
 
 ## Внешний вид
 
