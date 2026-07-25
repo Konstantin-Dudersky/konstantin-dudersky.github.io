@@ -31,10 +31,12 @@ def copy_kicad_image [article: string, filename: string] {
     cp $source $target_folder
 }
 
-copy_pcb_render EKDR-STEPx4 0.2.0
-copy_pcb_render EKMC-ESP32C3 0.2.0
 copy_pcb_render EKCP-RP 0.2.0
+copy_pcb_render EKDR-STEPx4 0.2.0
+copy_pcb_render EKLD-10 0.2.0
 copy_pcb_render EKLD-18 0.2.0
+copy_pcb_render EKMC-ESP32C3 0.2.0
+copy_pcb_render EKPS-20W 0.2.0
 
 copy_pcb_render PMCP-ESP32C3 0.1.1
 copy_pcb_render PMCP-LLP 0.1.1
@@ -46,7 +48,6 @@ copy_pcb_render PMIO-DIx32 0.1.0
 copy_pcb_render PMIO-DQx16 0.1.0
 copy_pcb_render PMIO-PWMx16 0.1.0
 copy_pcb_render PMIO-RQx8 0.1.0
-copy_pcb_render PMPS-20W 0.1.1
 
 copy_kicad_image PMIO-AIVx8 kicad_images-pmio_aiv_voltage_channel
 copy_kicad_image PMIO-AIVx8 kicad_images-pmio_aiv_current_channel
