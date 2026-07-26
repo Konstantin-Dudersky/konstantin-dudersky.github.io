@@ -1,5 +1,5 @@
 ---
-title: PMCP-LLP
+title: EKCP-LLP
 description: Модуль контроллера на базе одноплатника Luckfox Lyra.
 ---
 
@@ -18,14 +18,18 @@ import PcbRender  from '@components/PcbRender.astro';
 
 При сборке модуля на контроллер загружается прошивка со всеми необходимыми настройками.
 
+2 интерфейса CAN 2.0. Один из интерфейсов подключен к межмодульной шине IBus, второй полностью независим.
+
+2 интерфейса RS-485. Возможна программная реализация протоколов на основе RS-485 - например, Modbus RTU.
+
 ## Схема внешних подключений
 
 ## Конфигурация
 
 ## Внешний вид
 
-import render_top from "./PMCP-LLP/render_x0y0z0.png";
-import render_bottom from "./PMCP-LLP/render_x0y180z0.png";
+import render_top from "./EKCP-LLP/render_x0y0z0.png";
+import render_bottom from "./EKCP-LLP/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
@@ -39,4 +43,3 @@ import render_bottom from "./PMCP-LLP/render_x0y180z0.png";
 
 [^1]: **Luckfox Lyra** - https://www.luckfox.com/Luckfox-Lyra
 [^2]: **Luckfox Lyra Plus** - https://www.luckfox.com/Luckfox-Lyra-Plus
-[^3]: Buildroot SDK -
