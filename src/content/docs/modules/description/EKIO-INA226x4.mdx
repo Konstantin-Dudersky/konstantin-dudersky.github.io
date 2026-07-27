@@ -10,3 +10,14 @@ import PcbRender  from '@components/PcbRender.astro';
 </p>
 
 ## Конфигурация
+
+## Внешний вид
+
+import render_top from "./EKIO-INA226x4/render_x0y0z0.png";
+import render_bottom from "./EKIO-INA226x4/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
