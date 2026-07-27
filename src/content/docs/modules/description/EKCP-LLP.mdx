@@ -7,6 +7,13 @@ import PcbRender  from '@components/PcbRender.astro';
 
 <p>{frontmatter.description}</p>
 
+На модуле присутствуют следующие интерфейсы:
+- Ethernet (при установке **Luckfox Lyra Plus**)
+- DSI
+- 2 x CAN2.0
+- 2 x RS-485
+- USB
+
 Можно собирать как с моделью **Luckfox Lyra** [^1], так и с моделью **Luckfox Lyra Plus** [^2]. Посадочное место у контроллеров одинаковое, у модели **Plus** есть дополнительный интерфейс Ethernet.
 
 Через интерфейс DSI можно подключать дисплеи с тач-скринами:
@@ -14,11 +21,11 @@ import PcbRender  from '@components/PcbRender.astro';
 - Дисплеи Luckfox (https://www.luckfox.com/index.php?route=product/category&path=228_229_237)
 - Дисплеи Waveshare (https://www.waveshare.com/catalogsearch/result/?q=DSI)
 
-Операционная система - Linux, собираемая с помощью Buildroot. Производитель Luckfox [предоставляет SDK](https://wiki.luckfox.com/Luckfox-Lyra/SDK-Image-Compilation) для сборки образа. При сборке также назначается фунциональность ножек контроллера (Rockchip Matrix).
+Операционная система - Linux, собираемая с помощью Buildroot. Производитель Luckfox [предоставляет SDK](https://wiki.luckfox.com/Luckfox-Lyra/SDK-Image-Compilation) для сборки образа. При сборке также назначается фунциональность ножек контроллера (Rockchip Matrix). Необходимая настройка дерева устройств приведена в разделе [Настройка Device Tree](http://localhost:4321/modules/description/ekcp-llp/#настройка-device-tree).
 
-При сборке модуля на контроллер загружается прошивка со всеми необходимыми настройками.
+При сборке модуля на контроллер **Luckfox Lyra** загружается прошивка со всеми необходимыми настройками.
 
-2 интерфейса CAN 2.0. Один из интерфейсов подключен к межмодульной шине IBus, второй полностью независим.
+2 интерфейса CAN 2.0. Один из интерфейсов подключен к межмодульной шине IBus, второй полностью независим. Взаимодействовать с шиной можно через драйверы [SocketCAN](https://www.kernel.org/doc/html/latest/networking/can.html).
 
 2 интерфейса RS-485. Возможна программная реализация протоколов на основе RS-485 - например, Modbus RTU.
 
@@ -40,6 +47,56 @@ import render_bottom from "./EKCP-LLP/render_x0y180z0.png";
 ## Описание
 
 ## Настройка Device Tree
+
+Для работы с подключенными интерфейсами перед сборкой образа необходимо настроить дерево устройств (Device Tree). В файл `kernel/arch/arm/boot/dts/rk3506-luckfox-lyra.dtsi` необходимо добавить следующие строки:
+
+```dts
+&i2c0 {
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&rm_io5_i2c0_scl &rm_io4_i2c0_sda>;
+};
+
+&can0 {
+    assigned-clocks = <&cru CLK_CAN0>;
+    assigned-clock-rates = <200000000>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&rm_io25_can0_tx &rm_io24_can0_rx>;
+    status = "okay";
+};
+
+&can1 {
+    assigned-clocks = <&cru CLK_CAN1>;
+    assigned-clock-rates = <200000000>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&rm_io3_can1_tx &rm_io2_can1_rx>;
+    status = "okay";
+};
+
+&uart1 {
+    pinctrl-0 = <&rm_io31_uart1_tx &rm_io29_uart1_rx>;
+    status = "okay";
+    pinctrl-names = "default";
+};
+
+&uart2 {
+    pinctrl-0 = <&rm_io28_uart2_tx &rm_io26_uart2_rx>;
+    status = "okay";
+    pinctrl-names = "default";
+};
+```
+
+После сборки образа и загрузки прошивки на контроллер в системе появятся следующие интерфейсы:
+
+- `/dev/i2c-0` - интерфейс I²C₀. Для связи с микросхемой часов реального времени **DS3231**.
+- `/dev/i2c-2` - интерфейс I²C₂. Настроен в прошивке по умолчанию, используется для связи с тач-контроллером дисплея в интерфейсе DSI.
+- `/dev/can0` - интерфейс CAN₀. Подключен к коннектору межмодульной шины IBus.
+- `/dev/can1` - интерфейс CAN₁.
+- `/dev/ttyS1` - интерфейс UART1. Через устройство `/dev/gpiochip1`, линия 26 необходимо управлять сигналом RTS (Request To Send).
+- `/dev/ttyS2` - интерфейс UART2. Через устройство `/dev/gpiochip1`, линия 18 необходимо управлять сигналом RTS (Request To Send).
+
+В этом же файле DTSI файле необходимо настроить интерфейс DSI для подключения экрана. С настройками по умолчанию можно подключить экран 10.1". Настройки для других экранов описаны в вики производителя - https://wiki.luckfox.com/Luckfox-Lyra/Device-Tree#3-device-tree-configuration.
+
 
 [^1]: **Luckfox Lyra** - https://www.luckfox.com/Luckfox-Lyra
 [^2]: **Luckfox Lyra Plus** - https://www.luckfox.com/Luckfox-Lyra-Plus
