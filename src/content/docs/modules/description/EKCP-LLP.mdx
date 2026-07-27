@@ -4,17 +4,20 @@ description: Модуль контроллера на базе одноплат�
 ---
 
 import PcbRender  from '@components/PcbRender.astro';
+import Options  from '@components/Options.astro';
+
 
 <p>{frontmatter.description}</p>
 
-На модуле присутствуют следующие интерфейсы:
-- Ethernet (при установке **Luckfox Lyra Plus**)
-- DSI
-- 2 x CAN2.0
-- 2 x RS-485
+Основные характеристики:
+- одноплатник **Luckfox Lyra** или **Luckfox Lyra Plus**
+- интерфейс Ethernet (при установке **Luckfox Lyra Plus**)
+- интерфейс DSI - для сенсорных экранов
+- 2 интерфейса CAN2.0
+- 2 интерфейса RS-485
 - USB
 
-Можно собирать как с моделью **Luckfox Lyra** [^1], так и с моделью **Luckfox Lyra Plus** [^2]. Посадочное место у контроллеров одинаковое, у модели **Plus** есть дополнительный интерфейс Ethernet.
+Модуль можно собирать как с моделью **Luckfox Lyra**, так и с моделью **Luckfox Lyra Plus**. Посадочное место у контроллеров одинаковое, у модели **Plus** есть дополнительный интерфейс Ethernet.
 
 Через интерфейс DSI можно подключать дисплеи с тач-скринами:
 - Официальные дисплеи Raspberry Pi (https://www.raspberrypi.com/products/touch-display-2/)
@@ -29,9 +32,17 @@ import PcbRender  from '@components/PcbRender.astro';
 
 2 интерфейса RS-485. Возможна программная реализация протоколов на основе RS-485 - например, Modbus RTU.
 
+В модуле устанавливается чип часов реального времени (RTC) **DS3231M**. Работа часов при отсутствии питания обеспечивается батарейкой формата CR1220.
+
+Для подключения устройств в порт USB потребуется кабель MX1.25 4Pin To USB, например https://www.waveshare.com/mx1.25-4p-to-usb-cable.htm
+
 ## Схема внешних подключений
 
 ## Конфигурация
+
+import { options_config } from './EKCP-LLP/options.ts';
+
+<Options options_config = {options_config} />
 
 ## Внешний вид
 
@@ -97,6 +108,9 @@ import render_bottom from "./EKCP-LLP/render_x0y180z0.png";
 
 В этом же файле DTSI файле необходимо настроить интерфейс DSI для подключения экрана. С настройками по умолчанию можно подключить экран 10.1". Настройки для других экранов описаны в вики производителя - https://wiki.luckfox.com/Luckfox-Lyra/Device-Tree#3-device-tree-configuration.
 
+## Ссылки
 
-[^1]: **Luckfox Lyra** - https://www.luckfox.com/Luckfox-Lyra
-[^2]: **Luckfox Lyra Plus** - https://www.luckfox.com/Luckfox-Lyra-Plus
+|  |  |  |
+| --- | --- | --- |
+| **DS3231M** даташит | [Скачать](/datasheets/DS3231M.pdf) | [Ссылка](https://www.analog.com/en/products/ds3231m.html) |
+| **RK3506B** даташит | [Скачать](/datasheets/RK3506B.pdf) | [Ссылка](https://github.com/LuckfoxTECH/Luckfox-Lyra-docs) |
