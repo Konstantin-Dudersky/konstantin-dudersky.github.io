@@ -35,6 +35,7 @@ copy_pcb_render EKCP-LLP 0.2.0
 copy_pcb_render EKCP-RP 0.2.0
 copy_pcb_render EKDR-STEPx4 0.2.0
 copy_pcb_render EKIO-INA226x4 0.2.0
+copy_pcb_render EKIO-PWMx16 0.2.0
 copy_pcb_render EKLD-10 0.2.0
 copy_pcb_render EKLD-18 0.2.0
 copy_pcb_render EKMC-ESP32C3 0.2.0
@@ -48,7 +49,6 @@ copy_pcb_render PMIO-AIVx8 0.1.1
 copy_pcb_render PMIO-AIWx4 0.1.1
 copy_pcb_render PMIO-DIx32 0.1.0
 copy_pcb_render PMIO-DQx16 0.1.0
-copy_pcb_render PMIO-PWMx16 0.1.0
 copy_pcb_render PMIO-RQx8 0.1.0
 
 copy_kicad_image PMIO-AIVx8 kicad_images-pmio_aiv_voltage_channel

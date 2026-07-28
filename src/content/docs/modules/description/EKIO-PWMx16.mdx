@@ -6,9 +6,9 @@ description: Модуль для управления 16 ШИМ выходами
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import ExtConn from "./PMIO-PWMx16/ext_conn.svg";
-import Schematic from "./PMIO-PWMx16/schematic.svg";
-import { options_config } from './PMIO-PWMx16/options.ts';
+import ExtConn from "./EKIO-PWMx16/ext_conn.svg";
+import Schematic from "./EKIO-PWMx16/schematic.svg";
+import { options_config } from './EKIO-PWMx16/options.ts';
 
 
 <p>
@@ -27,8 +27,8 @@ import { options_config } from './PMIO-PWMx16/options.ts';
 
 ## Внешний вид
 
-import render_top from "./PMIO-PWMx16/render_x0y0z0.png";
-import render_bottom from "./PMIO-PWMx16/render_x0y180z0.png";
+import render_top from "./EKIO-PWMx16/render_x0y0z0.png";
+import render_bottom from "./EKIO-PWMx16/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
