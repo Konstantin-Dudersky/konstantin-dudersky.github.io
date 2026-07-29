@@ -5,21 +5,25 @@ description: Модуль для подключения периферийных
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import ExtConn from "./PMIF-I2Cx8/ext_conn.svg";
-import Schematic from "./PMIF-I2Cx8/schematic.svg";
-import { options_config } from './PMIF-I2Cx8/options.ts';
+import ExtConn from "./EKIF-I2Cx8/ext_conn.svg";
+import Schematic from "./EKIF-I2Cx8/schematic.svg";
+import { options_config } from './EKIF-I2Cx8/options.ts';
 
 <p>
     { frontmatter.description }
 </p>
 
-Все каналы подключены через I²C-мультиплексор **TCA9548A** [^1], что позволяет подключать к разным каналам периферию с одинаковым адресом.
+Основные параметры:
+- 8 каналов
+- мультиплексор **TCA9548A**
+- напряжение питания: 3,3 В или 5 В
+- коммуникация по CAN-шине
 
-Все устройства гальванически изолированы от шины IBus с помощью I²C-изолятора **CA-IS3021** [^2].
+Все каналы подключены через I²C-мультиплексор **TCA9548A**. К разным каналам можно подключать устройства с одинаковым адресом.
 
-Подключённые устройства можно запитывать как 5В, так и 3.3В. Напряжение питания одинаковое для всех каналов.
+На модуле есть посадочные места для установки изолированных блоков питания 24В / 5В и 24 В / 3,3 В. Блок питания на 3,3 В устанавливается обязательно. Блок питания на 5 В устанавливается опционально - при необходимости запитать устройства от 5 В. Напряжение на каждом канале выбирается с помощью перемычек. Мультиплексор **TCA9548A** позволяет такую схему подключения.
 
-## Конфигурация
+Для индикации активности передачи можно подключить модуль [EKLD-10](/modules/description/ekld-10). Светодиоды подключаются через P-канальные MOSFET к линиям SDA и загораются при активной передаче (когда линия SDA подтянута к земле).
 
 ## Схема внешних подключений
 
@@ -63,8 +67,8 @@ import { options_config } from './PMIF-I2Cx8/options.ts';
 
 ## Внешний вид
 
-import render_top from "./PMIF-I2Cx8/render_x0y0z0.png";
-import render_bottom from "./PMIF-I2Cx8/render_x0y180z0.png";
+import render_top from "./EKIF-I2Cx8/render_x0y0z0.png";
+import render_bottom from "./EKIF-I2Cx8/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
@@ -113,5 +117,10 @@ i2ctransfer -y 0 w1@0x70 0xFF
 i2ctransfer -y 0 w1@0x70 0x00
 ```
 
-[^1]: **TCA9548A** - https://www.ti.com/product/TCA9548A
-[^2]: **CA-IS3021** - https://e.chipanalog.com/products/interface/isolated/i2c/1298
+## Ссылки
+
+
+
+|  |  |  |
+| --- | --- | --- |
+| **TCA9548A** даташит | [Скачать](/datasheets/tca9548a.pdf) | [Ссылка](https://www.ti.com/product/TCA9548A) |
