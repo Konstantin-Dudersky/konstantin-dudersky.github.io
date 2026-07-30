@@ -5,9 +5,9 @@ description: Модуль опроса 32 дискретных входов.
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import Schematic from "./PMIO-DIx32/schematic.svg";
-import ExtConn from "./PMIO-DIx32/ext_conn.svg";
-import { options_config } from './PMIO-DIx32/options.ts';
+import Schematic from "./EKIO-DIx32/schematic.svg";
+import ExtConn from "./EKIO-DIx32/ext_conn.svg";
+import { options_config } from './EKIO-DIx32/options.ts';
 
 <p>
     { frontmatter.description }
@@ -29,8 +29,8 @@ import { options_config } from './PMIO-DIx32/options.ts';
 
 ## Внешний вид
 
-import render_top from "./PMIO-DIx32/render_x0y0z0.png";
-import render_bottom from "./PMIO-DIx32/render_x0y180z0.png";
+import render_top from "./EKIO-DIx32/render_x0y0z0.png";
+import render_bottom from "./EKIO-DIx32/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}

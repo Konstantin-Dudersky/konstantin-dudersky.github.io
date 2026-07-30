@@ -8,11 +8,11 @@ import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
 
-import ExtConn from "./PMIO-AIVx8/ext_conn.svg";
-import Schematic from "./PMIO-AIVx8/schematic.svg";
-import { options_config } from './PMIO-AIVx8/options.ts';
-import VoltageChannel from "./PMIO-AIVx8/kicad_images-pmio_aiv_voltage_channel.svg";
-import CurrentChannel from "./PMIO-AIVx8/kicad_images-pmio_aiv_current_channel.svg";
+import ExtConn from "./EKIO-AIVx8/ext_conn.svg";
+import Schematic from "./EKIO-AIVx8/schematic.svg";
+import { options_config } from './EKIO-AIVx8/options.ts';
+import VoltageChannel from "./EKIO-AIVx8/kicad_images-pmio_aiv_voltage_channel.svg";
+import CurrentChannel from "./EKIO-AIVx8/kicad_images-pmio_aiv_current_channel.svg";
 
 <p>
     { frontmatter.description }
@@ -36,8 +36,8 @@ import CurrentChannel from "./PMIO-AIVx8/kicad_images-pmio_aiv_current_channel.s
 
 ## Внешний вид
 
-import render_top from "./PMIO-AIVx8/render_x0y0z0.png";
-import render_bottom from "./PMIO-AIVx8/render_x0y180z0.png";
+import render_top from "./EKIO-AIVx8/render_x0y0z0.png";
+import render_bottom from "./EKIO-AIVx8/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}

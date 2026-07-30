@@ -6,9 +6,9 @@ description: Модуль для подключения 4 тензодатчик
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import ExtConn from "./PMIO-AIWx4/ext_conn.svg";
-import Schematic from "./PMIO-AIWx4/schematic.svg";
-import { options_config } from './PMIO-AIWx4/options.ts';
+import ExtConn from "./EKIO-AIWx4/ext_conn.svg";
+import Schematic from "./EKIO-AIWx4/schematic.svg";
+import { options_config } from './EKIO-AIWx4/options.ts';
 
 <p>
     { frontmatter.description }
@@ -28,8 +28,8 @@ import { options_config } from './PMIO-AIWx4/options.ts';
 
 ## Внешний вид
 
-import render_top from "./PMIO-AIWx4/render_x0y0z0.png";
-import render_bottom from "./PMIO-AIWx4/render_x0y180z0.png";
+import render_top from "./EKIO-AIWx4/render_x0y0z0.png";
+import render_bottom from "./EKIO-AIWx4/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
