@@ -6,9 +6,9 @@ description: Модуль для управления 16 дискретными 
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import Schematic from "./PMIO-DQx16/schematic.svg";
-import ExtConn from "./PMIO-DQx16/ext_conn.svg";
-import { options_config } from './PMIO-DQx16/options.ts';
+import Schematic from "./EKIO-DQx16/schematic.svg";
+import ExtConn from "./EKIO-DQx16/ext_conn.svg";
+import { options_config } from './EKIO-DQx16/options.ts';
 
 <p>
     { frontmatter.description }
@@ -28,8 +28,8 @@ import { options_config } from './PMIO-DQx16/options.ts';
 
 ## Внешний вид
 
-import render_top from "./PMIO-DQx16/render_x0y0z0.png";
-import render_bottom from "./PMIO-DQx16/render_x0y180z0.png";
+import render_top from "./EKIO-DQx16/render_x0y0z0.png";
+import render_bottom from "./EKIO-DQx16/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}

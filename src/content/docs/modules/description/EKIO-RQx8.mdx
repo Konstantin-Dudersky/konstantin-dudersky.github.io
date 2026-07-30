@@ -6,15 +6,19 @@ description: Модуль для управления 8 дискретными �
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import Schematic from "./PMIO-RQx8/schematic.svg";
-import ExtConn from "./PMIO-RQx8/ext_conn.svg";
-import { options_config } from './PMIO-RQx8/options.ts';
+import Schematic from "./EKIO-RQx8/schematic.svg";
+import ExtConn from "./EKIO-RQx8/ext_conn.svg";
+import { options_config } from './EKIO-RQx8/options.ts';
 
 <p>
     { frontmatter.description }
 </p>
 
-Выход - нормально открытый контакт, к которому можно подключить нагрузку до 230В/3А на канал.
+Основные параметры:
+- 8 реле с нормально открытым каналом
+- до 230В/3А на канал
+
+Для индикации состояния реле можно подключить модуль [EKLD-10](/modules/description/ekld-10).
 
 ## Схема внешних подключений
 
@@ -32,8 +36,8 @@ import { options_config } from './PMIO-RQx8/options.ts';
 
 ## Внешний вид
 
-import render_top from "./PMIO-RQx8/render_x0y0z0.png";
-import render_bottom from "./PMIO-RQx8/render_x0y180z0.png";
+import render_top from "./EKIO-RQx8/render_x0y0z0.png";
+import render_bottom from "./EKIO-RQx8/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
