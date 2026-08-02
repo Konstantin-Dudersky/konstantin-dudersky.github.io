@@ -3,6 +3,9 @@ title: EKIO-AQx4
 description: 4-канальный модуль аналогового выхода.
 ---
 
+import PcbRender  from '@components/PcbRender.astro';
+
+
 <p>
     { frontmatter.description }
 </p>
@@ -18,3 +21,22 @@ DAC7760, DAC8760
 GP8630N
 
 XTR111
+
+## Внешний вид
+
+import render_top from "./EKIO-AQx4/render_x0y0z0.png";
+import render_bottom from "./EKIO-AQx4/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
+
+## Ссылки
+
+|  |  |  |
+| --- | --- | --- |
+| PLC Analog Output Module Architectures (SBAA631) | [Скачать](/datasheets/sbaa631.pdf) | [Ссылка](https://www.ti.com/lit/an/sbaa631/sbaa631.pdf) |
+| **XTR111** даташит | [Скачать](/datasheets/xtr111.pdf) | [Ссылка](https://www.ti.com/product/XTR111) |
+| **MCP4728** даташит | [Скачать](/datasheets/MCP4728.pdf) | [Ссылка](https://www.microchip.com/en-us/product/mcp4728) |
