@@ -15,10 +15,12 @@ import PcbRender  from '@components/PcbRender.astro';
 
 Плата подключается к модулю через Pin Header с шагом 2 мм. Микроконтроллер подключается к чипам модуля через интерфейсы I²C и/или SPI. В разных модулях используется разная распиновка, для получения информации смотри схему каждого модуля.
 
-На плате расположен CAN-трансивер **CA-IS3050** для подключения микроконтроллера к шине CAN. Используемые пины:
+На плате расположен CAN-трансивер **CA-IS1044S** для подключения микроконтроллера к шине CAN. Используемые пины:
 
 - CAN RX - GPIO0
 - CAN TX - GPIO1
+
+CAN-трансивер **CA-IS1044S** позволяет подключать до 110 устройств к одному сегменту шины CAN.
 
 ## Схема внешних подключений
 
@@ -38,5 +40,7 @@ import render_bottom from "./EKMC-ESP32C3/render_x0y180z0.png";
 
 ## Ссылки
 
-| **CA-IS3050** даташит | [Скачать](/datasheets/CA-IS3050.pdf) | [Ссылка](https://e.chipanalog.com/products/interface/isolated/ict/722) |
+|  |  |  |
+| --- | --- | --- |
 | **ESP32-C3** даташит | [Скачать](/datasheets/ESP32-C3.pdf) | [Ссылка](https://www.espressif.com/en/products/socs/esp32-c3) |
+| **CA-IS1044S** даташит | [Скачать](/datasheets/CA-IS1044S.pdf) | [Ссылка](https://e.chipanalog.com/products/interface/isolated/ict/721) |
