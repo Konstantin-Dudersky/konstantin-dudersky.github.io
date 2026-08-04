@@ -1,27 +1,41 @@
 ---
 title: EKIO-PWMx16
-description: Модуль для управления 16 ШИМ выходами.
+description: 16-канальный модуль для создания ШИМ сигналов.
 ---
 
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import ExtConn from "./EKIO-PWMx16/ext_conn.svg";
-import Schematic from "./EKIO-PWMx16/schematic.svg";
-import { options_config } from './EKIO-PWMx16/options.ts';
-
-
 <p>
     { frontmatter.description }
 </p>
 
-Работает на основе чипа **PCA9685** [^1].
+Основные характеристики:
+- 16 каналов
+- Создание ШИМ сигналов с амплитудой 5 В, частотой от 24 до 1526 Гц
+- Управление через гальванически изолированный CAN-интерфейс
+
+Область применения:
+- Управление RC-сервоприводами в робототехнике
+- Регулирование яркости светодиодов, RGB-светильников и светодиодных лент
+- Регулирование мощности нагревателей
+- Формирование задания скорости для драйверов двигателей постоянного тока
+
+Все каналы модуля работают на общей частоте ШИМ. Для каждого канала можно независимо задать коэффициент заполнения и момент начала импульса.
+
+Выходы модуля предназначены для управления входами внешних драйверов и контроллеров. Мощные нагрузки (двигатели, светодиодные ленты, клапаны, нагреватели) необходимо подключать через соответствующие силовые каскады.
+
+Для индикации состояния выхода подключается модуль [EKLD-18](/modules/description/ekld-18).
 
 ## Схема внешних подключений
+
+import ExtConn from "./EKIO-PWMx16/ext_conn.svg";
 
 <ExtConn />
 
 ## Конфигурация
+
+import { options_config } from './EKIO-PWMx16/options.ts';
 
 <Options options_config = { options_config } />
 
@@ -38,10 +52,15 @@ import render_bottom from "./EKIO-PWMx16/render_x0y180z0.png";
 
 ## Описание
 
+import Schematic from "./EKIO-PWMx16/schematic.svg";
+
 <Schematic />
 
-ШИМ сигнал генерируется чипом **PCA9685** [^1]. Чип управляется по шине I²C с гальванической изоляцией **CA-IS3021** [^2].
+ШИМ сигнал генерируется чипом **PCA9685**. Чип управляется по шине I²C с гальванической изоляцией **CA-IS3021**.
 
-[^1]: **PCA9685** - https://www.nxp.com/products/power-drivers/lighting-driver-and-controller-ics/led-drivers/16-channel-12-bit-pwm-fm-plus-ic-bus-led-driver:PCA9685
 
-[^2]: **CA-IS3021** - https://e.chipanalog.com/products/interface/isolated/i2c/1298
+## Ссылки
+
+|  |  |  |
+| --- | --- | --- |
+| **PCA9685** даташит | [Скачать](/datasheets/PCA9685.pdf) | [Ссылка](https://www.nxp.com/products/power-drivers/lighting-driver-and-controller-ics/led-drivers/16-channel-12-bit-pwm-fm-plus-ic-bus-led-driver:PCA9685) |

@@ -15,10 +15,17 @@ import { options_config } from './EKIO-RQx8/options.ts';
 </p>
 
 Основные характеристики:
-- 8 реле с нормально открытым каналом
-- до 230В/3А на канал
+- 8 реле с нормально открытым контактом
+- Напряжение до 230 В, ток до 5 А на канал
+- Реле могут коммутировать нагрузку от разных источников питания
+- Управление через гальванически изолированный CAN-интерфейс
 
-Для индикации состояния реле можно подключить модуль [EKLD-10](/modules/description/ekld-10).
+Область применения:
+- Управление исполнительными механизмами (клапаны, заслонки)
+- Управление электроаппаратурой (контакторы, блоки питания)
+- Управление светосигнальной аппаратурой (индикаторы, сигнальные лампы, сирены)
+
+Для индикации состояния реле подключается модуль [EKLD-10](/modules/description/ekld-10).
 
 ## Схема внешних подключений
 
@@ -49,12 +56,16 @@ import render_bottom from "./EKIO-RQx8/render_x0y180z0.png";
 
 <Schematic />
 
-GPIO расширитель **MCP23017** [^1] получает команды по шине I²C и управляет выходами.
+GPIO расширитель **MCP23017** получает команды по шине I²C и управляет выходами.
 
-Сигналы с GPIO расширителя поступают на транзисторную сборку **TBD62783** [^2].
+Сигналы с GPIO расширителя поступают на транзисторную сборку **TBD62783**.
 
-После транзисторов сигналы управления поступают на реле **G5NB-1A-E-DC5** [^3].
+После транзисторов сигналы управления поступают на реле **G5NB-1A-E-DC5**.
 
-[^1]: **MCP23017** - https://www.microchip.com/en-us/product/mcp23017.
-[^2]: **TBD62783** - https://toshiba.semicon-storage.com/eu/semiconductor/product/linear-ics/transistor-arrays/detail.TBD62783AFG.html
-[^3]: **G5NB-1A-E-DC5** - https://components.omron.com/us-en/products/relays/G5NB
+## Ссылки
+
+|  |  |  |
+| --- | --- | --- |
+| **MCP23017** даташит | [Скачать](/datasheets/MCP23017.pdf) | [Ссылка](https://www.microchip.com/en-us/product/mcp23017) |
+| **TBD62783** даташит | [Скачать](/datasheets/TBD62783AFG.pdf) | [Ссылка](https://toshiba.semicon-storage.com/eu/semiconductor/product/linear-ics/transistor-arrays/detail.TBD62783AFG.html) |
+| **G5NB-1A-E-DC5** даташит | [Скачать](/datasheets/G5NB-1A-E-DC5.pdf) | [Ссылка](https://components.omron.com/us-en/products/relays/G5NB) |

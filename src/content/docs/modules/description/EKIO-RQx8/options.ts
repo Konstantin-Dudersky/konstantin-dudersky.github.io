@@ -45,29 +45,13 @@ export const options_config: IOptionsConfig = {
           desc: "7 реле",
           price: 777,
         } as IOptionVariant,
-      ],
-      default: 6,
-    } as IOption,
-    {
-      name: "Коннекторы шины IBus",
-      variants: [
         {
-          name: "T",
-          desc: "Только сверху (top)",
-          price: 0.1,
-        } as IOptionVariant,
-        {
-          name: "B",
-          desc: "Только снизу (bottom)",
-          price: 0.1,
-        } as IOptionVariant,
-        {
-          name: "TB",
-          desc: "Сверху и снизу (top + bottom)",
-          price: 0.2,
+          name: "8",
+          desc: "8 реле",
+          price: 777,
         } as IOptionVariant,
       ],
-      default: 2,
+      default: 7,
     } as IOption,
   ],
 };
