@@ -1,34 +1,39 @@
 ---
 title: EKIO-AIVx8
-description: Модуль для подключения 8 датчиков 0-10 В или 0-20 мА.
+description: Модуль для подключения 8 датчиков 0–10 В или 0–20 мА.
 ---
-import { Zoom } from "starlight-image-zoom/components";
 
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-
 import ExtConn from "./EKIO-AIVx8/ext_conn.svg";
 import Schematic from "./EKIO-AIVx8/schematic.svg";
 import { options_config } from './EKIO-AIVx8/options.ts';
-import VoltageChannel from "./EKIO-AIVx8/kicad_images-pmio_aiv_voltage_channel.svg";
-import CurrentChannel from "./EKIO-AIVx8/kicad_images-pmio_aiv_current_channel.svg";
 
 <p>
     { frontmatter.description }
 </p>
 
+Основные характеристики:
+- 8 каналов измерения
+- Измерение напряжения 0–10 В или тока 0–20 мА
+- Разрядность измерения до 15 бит
+- Передача измеренных значений через гальванически изолированный CAN-интерфейс
+
+Область применения:
+
+Для индикации состояния входов подключается модуль [EKLD-10](/modules/description/ekld-10).
+
+
 ## Схема внешних подключений
 
-<Zoom label="Схема внешних подключений">
-    <ExtConn/>
-</Zoom>
+<ExtConn/>
 
 На рисунке отображена схема внешних подключений.
 
 К клеммнику XD01 подключается питание от внешнего блока питания.
 
-На схеме показано подключение датчиков 0-20 мА и 0-10 В.
+На схеме показано подключение датчиков 0–20 мА и 0–10 В.
 
 ## Конфигурация
 
@@ -47,9 +52,7 @@ import render_bottom from "./EKIO-AIVx8/render_x0y180z0.png";
 
 ## Описание
 
-<Zoom label="Функциональная схема модуля">
-    <Schematic />
-</Zoom>
+<Schematic />
 
 На рисунке отображена функциональная схема модуля.
 
@@ -79,11 +82,13 @@ import render_bottom from "./EKIO-AIVx8/render_x0y180z0.png";
 **ESP32-C3** передаёт данные на CAN-шину через CAN-трансивер **CA-IS3050**.
 
 
-### Схема канала 0-10 В
+### Схема канала 0–10 В
 
-<VoltageChannel width={700} height={280}  preserveAspectRatio="xMidYMax meet"/>
+import VoltageChannel from "./EKIO-AIVx8/kicad_images-pmio_aiv_voltage_channel.svg";
 
-На рисунке отображена схема измерения сигнала 0-10 В.
+<VoltageChannel width={700} height={280} preserveAspectRatio="xMidYMax meet"/>
+
+На рисунке отображена схема измерения сигнала 0–10 В.
 
 **SMAJ33CA** - защитный TVS-диод. Нужен для защиты от кратковременных выбросов напряжения.
 
@@ -101,11 +106,13 @@ $ V = \frac{V_{input} \cdot R_{602}}{R_{602} + R_{603}} = \frac{10 В \cdot 220 
 
 $ f = \frac{1}{2 \pi \cdot R_{601} \cdot C_{601}} = \frac{1}{2 \pi \cdot 330 Ом \cdot 10^{-6} Ф} = 482 Гц $
 
-### Схема канала 0-20 мА
+### Схема канала 0–20 мА
+
+import CurrentChannel from "./EKIO-AIVx8/kicad_images-pmio_aiv_current_channel.svg";
 
 <CurrentChannel width={700} height={280}  preserveAspectRatio="xMidYMax meet"/>
 
-На рисунке отображена схема измерения сигнала 0-20 мА.
+На рисунке отображена схема измерения сигнала 0–20 мА.
 
 **SMAJ33CA** - защитный TVS-диод. Нужен для защиты от кратковременных выбросов напряжения.
 

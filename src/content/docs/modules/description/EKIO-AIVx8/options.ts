@@ -175,26 +175,5 @@ export const options_config: IOptionsConfig = {
         } as IOptionVariant,
       ],
     } as IOption,
-    {
-      name: "Коннекторы шины IBus",
-      default: 2,
-      variants: [
-        {
-          name: "T",
-          desc: "Только сверху (top)",
-          price: 0.1,
-        } as IOptionVariant,
-        {
-          name: "B",
-          desc: "Только снизу (bottom)",
-          price: 0.1,
-        } as IOptionVariant,
-        {
-          name: "TB",
-          desc: "Сверху и снизу (top + bottom)",
-          price: 0.2,
-        } as IOptionVariant,
-      ],
-    } as IOption,
   ],
 };
