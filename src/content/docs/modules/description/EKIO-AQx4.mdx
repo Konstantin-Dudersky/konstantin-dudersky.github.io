@@ -3,6 +3,7 @@ title: EKIO-AQx4
 description: 4-канальный модуль аналогового выхода 0–20 мА, 4–20 мА, 0–10 В.
 ---
 
+import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
 
@@ -33,6 +34,12 @@ import PcbRender  from '@components/PcbRender.astro';
 Сигнал 4–20 мА получается из 0–20 мА путём программного ограничения диапазона. Следовательно, разрешение сигнала 4–20 мА немного меньше и составляет примерно 11,7 бит.
 
 Тип выходного сигнала (напряжение 0–10 В или ток 0–20мА) выбирается с помощью перемычки на плате.
+
+## Конфигурация
+
+import { options_config } from './EKIO-AQx4/options.ts';
+
+<Options options_config = {options_config} />
 
 ## Внешний вид
 
