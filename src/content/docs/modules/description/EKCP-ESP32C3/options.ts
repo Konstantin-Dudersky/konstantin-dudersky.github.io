@@ -2,7 +2,7 @@ import type {
   IOptionsConfig,
   IOption,
   IOptionVariant,
-} from "../../../../../components/Options.astro";
+} from "@components/Options.astro";
 
 export const options_config: IOptionsConfig = {
   base_price: 14.8,

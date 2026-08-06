@@ -6,7 +6,7 @@ description: Модуль контроллера на базе микрокон�
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import { options_config } from './PMCP-ESP32C3/options.ts';
+import { options_config } from './EKCP-ESP32C3/options.ts';
 
 
 <p>{frontmatter.description} [^1].</p>
@@ -17,8 +17,8 @@ import { options_config } from './PMCP-ESP32C3/options.ts';
 
 ## Внешний вид
 
-import render_top from "./PMCP-ESP32C3/render_x0y0z0.png";
-import render_bottom from "./PMCP-ESP32C3/render_x0y180z0.png";
+import render_top from "./EKCP-ESP32C3/render_x0y0z0.png";
+import render_bottom from "./EKCP-ESP32C3/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
