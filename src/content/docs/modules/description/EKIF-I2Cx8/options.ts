@@ -2,111 +2,97 @@ import type {
   IOptionsConfig,
   IOption,
   IOptionVariant,
-} from "../../../../../components/Options.astro";
+} from "@components/Options.astro";
+
+
+const channel: IOptionVariant[] = [
+  { name: "x", desc: "Не использовать", price: 777 },
+  { name: "3", desc: "Питание 3.3 В", price: 777 },
+  { name: "5", desc: "Питание 5 В", price: 777 },
+];
 
 export const options_config: IOptionsConfig = {
   base_price: 14.8,
   options: [
     {
-      name: "Количество каналов",
-      default: 7,
+      name: "Канал CH0",
+      default: 1,
+      variants: channel,
+    } as IOption,
+    {
+      name: "Канал CH1",
+      default: 1,
+      variants: channel,
+    } as IOption,
+    {
+      name: "Канал CH2",
+      default: 1,
+      variants: channel,
+    } as IOption,
+    {
+      name: "Канал CH3",
+      default: 1,
+      variants: channel,
+    } as IOption,
+    {
+      name: "Канал CH4",
+      default: 1,
+      variants: channel,
+    } as IOption,
+    {
+      name: "Канал CH5",
+      default: 1,
+      variants: channel,
+    } as IOption,
+    {
+      name: "Канал CH6",
+      default: 1,
+      variants: channel,
+    } as IOption,
+    {
+      name: "Канал CH7",
+      default: 1,
+      variants: channel,
+    } as IOption,
+    {
+      name: "Мощность блока питания 3.3 В",
+      default: 1,
       variants: [
         {
-          name: "1",
-          desc: "1 канал",
+          name: "1W",
+          desc: "Мощность 1 Вт",
           price: 777,
         } as IOptionVariant,
         {
-          name: "2",
-          desc: "2 канала",
+          name: "2W",
+          desc: "Мощность 2 Вт",
           price: 777,
         } as IOptionVariant,
         {
-          name: "3",
-          desc: "3 канала",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "4",
-          desc: "4 канала",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "5",
-          desc: "5 каналов",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "6",
-          desc: "6 каналов",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "7",
-          desc: "7 каналов",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "8",
-          desc: "8 каналов",
+          name: "3W",
+          desc: "Мощность 3 Вт",
           price: 777,
         } as IOptionVariant,
       ],
     } as IOption,
     {
-      name: "Напряжение и мощность блока питания для подключаемых устройств",
-      default: 0,
+      name: "Мощность блока питания 5 В",
+      default: 1,
       variants: [
         {
-          name: "5-1",
-          desc: "Напряжение 5 В, мощность 1 Вт",
+          name: "1W",
+          desc: "Мощность 1 Вт",
           price: 777,
         } as IOptionVariant,
         {
-          name: "5-2",
-          desc: "Напряжение 5 В, мощность 2 Вт",
+          name: "2W",
+          desc: "Мощность 2 Вт",
           price: 777,
         } as IOptionVariant,
         {
-          name: "5-3",
-          desc: "Напряжение 5 В, мощность 3 Вт",
+          name: "3W",
+          desc: "Мощность 3 Вт",
           price: 777,
-        } as IOptionVariant,
-        {
-          name: "3.3-1",
-          desc: "Напряжение 3.3 В, мощность 1 Вт",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "3.3-2",
-          desc: "Напряжение 3.3 В, мощность 2 Вт",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "3.3-3",
-          desc: "Напряжение 3.3 В, мощность 3 Вт",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Коннекторы шины IBus",
-      default: 2,
-      variants: [
-        {
-          name: "T",
-          desc: "Только сверху (top)",
-          price: 0.1,
-        } as IOptionVariant,
-        {
-          name: "B",
-          desc: "Только снизу (bottom)",
-          price: 0.1,
-        } as IOptionVariant,
-        {
-          name: "TB",
-          desc: "Сверху и снизу (top + bottom)",
-          price: 0.2,
         } as IOptionVariant,
       ],
     } as IOption,
