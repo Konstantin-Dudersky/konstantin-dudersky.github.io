@@ -1,0 +1,25 @@
+---
+title: EKSP-CAN
+description: Вспомогательный модуль для подключения к межмодульной шине.
+---
+
+import PcbRender  from '@components/PcbRender.astro';
+
+<p>
+    { frontmatter.description }
+</p>
+
+## Схема внешних подключений
+
+## Внешний вид
+
+import render_top from "./EKSP-CAN/render_x0y0z0.png";
+import render_bottom from "./EKSP-CAN/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
+
+## Описание
