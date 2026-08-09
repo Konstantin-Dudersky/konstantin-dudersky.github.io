@@ -8,7 +8,6 @@ import starlightLinksValidator from 'starlight-links-validator'
 import starlightScrollToTop from "starlight-scroll-to-top";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-import starlightThemeNord from "starlight-theme-nord";
 import starlightSidebarTopics from 'starlight-sidebar-topics'
 import md3Theme from 'starlight-theme-md3';
 
