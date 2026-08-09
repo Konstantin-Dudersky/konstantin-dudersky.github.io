@@ -5,20 +5,30 @@ template: splash
 hero:
   tagline: Производство электроники для автоматизации
   image:
-    # file: ../../assets/houston.webp
-    file: hero.png
+    file: ../../assets/hero.png
   actions:
+    - text: Каталог
+      link: /modules/overview/
+      icon: open-book
+      variant: primary
     - text: Контакты
       link: /contacts/
-      icon: external
-      variant: primary
+      icon: email
+      variant: secondary
 ---
 
-import { Card, CardGrid, LinkButton, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid, LinkButton, LinkCard } from '@astrojs/starlight/components';
 
 ## Мы предлагаем
 
 <CardGrid>
+
+    <LinkCard
+		title="Электронные модули серии EK"
+		description="Отдельные модули для построения систем автоматизации"
+		href="/modules/overview/"
+	/>
+
     <LinkCard
 		title="Алтай"
 		description="Управление кривошипно-шатунными прессами"
@@ -37,9 +47,5 @@ import { Card, CardGrid, LinkButton, LinkCard } from '@astrojs/starlight/compone
         href="/distributed/"
     />
 
-	<LinkCard
-		title="Модули"
-		description="Отдельные модули для построения систем автоматизации"
-		href="/modules/overview/"
-	/>
+
 </CardGrid>
