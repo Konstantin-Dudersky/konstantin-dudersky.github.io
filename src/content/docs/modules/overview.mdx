@@ -35,6 +35,8 @@ import { frontmatter as EKLD_18 } from './description/EKLD-18.mdx';
 
 import { frontmatter as EKPS_20W } from './description/EKPS-20W.mdx';
 
+import { frontmatter as EKSP_CAN } from './description/EKSP-CAN.mdx';
+
 Линейка модулей для создания автоматических систем управления.
 
 import hero from "../hero.png";
@@ -71,13 +73,9 @@ import hero from "../hero.png";
 - Все модули имеют гальваническую изоляцию внутренней шины от периферийных устройств. Защита контроллера и других модулей.
 
 В чём отличие от фирменных промышленных контроллеров:
-
 - Стоимость - в разы меньше, чем фирменные контроллеры.
-
 - Открытая схемотехника.
-
 - Модули поставляются с написанной прошивкой, но можно написать и свою.
-
 - Возможность встраивания в нестандартный корпус.
 
 ## Список модулей
@@ -234,6 +232,17 @@ import hero from "../hero.png";
       title={ EKLD_18.title }
       href="/modules/description/ekld-18"
       description={ EKLD_18.description }
+  >
+  </LinkCard>
+</CardGrid>
+
+### Вспомогательные модули (EKSP)
+
+<CardGrid>
+  <LinkCard
+      title={ EKSP_CAN.title }
+      href="/modules/description/eksp-can"
+      description={ EKSP_CAN.description }
   >
   </LinkCard>
 </CardGrid>
