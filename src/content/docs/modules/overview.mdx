@@ -6,6 +6,7 @@ sidebar:
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import ImageCenter  from '@components/ImageCenter.astro';
 
 import { frontmatter as EKCP_ESP32C3 } from './description/EKCP-ESP32C3.mdx';
 import { frontmatter as EKCP_LLP } from './description/EKCP-LLP.mdx';
@@ -36,16 +37,19 @@ import { frontmatter as EKPS_20W } from './description/EKPS-20W.mdx';
 
 Линейка модулей для создания автоматических систем управления.
 
+import hero from "../hero.png";
+
+<ImageCenter
+    image={hero}
+    label="Рендер сборки модулей"
+    priority={true}
+/>
+
 Основные характеристики:
-
 - Контроллеры на основе распространённых одноплатных компьютеров (Raspberry Pi, Luckfox Lyra)
-
 - Большой набор модулей, для большинства распространённых типов датчиков и исполнительных устройств
-
 - Протокол обмена данными между модулями - CAN2.0. Скорость передачи данных - до 1 МБ/с
-
 - Общее количество модулей - до 110 в одном сегменте. Модулей одного типа - до 16
-
 - В одном сегменте может быть несколько модулей контроллеров, выполняющих разные функции
 
 Область применения:

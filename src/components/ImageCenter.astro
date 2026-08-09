@@ -1,0 +1,28 @@
+---
+const { image, label, priority } = Astro.props;
+
+import { Image } from "astro:assets";
+import { Zoom } from "starlight-image-zoom/components";
+---
+
+<style>
+    .pcb-render {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pcb-render .column {
+        margin: 0px;
+        width: 350px;
+    }
+</style>
+
+<div class="pcb-render">
+    <div class="column">
+        <Zoom label={label}>
+            <Image src={image} alt={label} priority={priority} />
+        </Zoom>
+    </div>
+</div>
