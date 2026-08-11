@@ -21,7 +21,9 @@ import PcbRender  from '@components/PcbRender.astro';
 - Управление и диагностика через гальванически изолированный CAN-интерфейс
 
 Область применения:
-
+- Управление линейными и поворотными механизмами на базе шаговых двигателей
+- Управление дозаторами, подающими механизмами
+- Управление заслонками и другими исполнительными механизмами с шаговым приводом
 
 При питании двигателей от разных источников необходимо объединить "минус" этих источников.
 
@@ -59,11 +61,17 @@ import render_bottom from "./EKDR-STEPx4/render_x0y180z0.png";
     bottom = {render_bottom}
 />
 
-
 ## Описание
+
+import Schematic from "./EKDR-STEPx4/schematic.svg";
+
+<Schematic />
+
+[EKMC-ESP32C3](/modules/description/ekmc-esp32c3)
 
 ## Ссылки
 
 |  |  |  |
 | --- | --- | --- |
 | **DRV8834S** даташит | [Скачать](/datasheets/drv8434s.pdf) | [Ссылка](https://www.ti.com/product/DRV8434S) |
+| **MCP23017** даташит | [Скачать](/datasheets/MCP23017.pdf) | [Ссылка](https://www.microchip.com/en-us/product/mcp23017) |
