@@ -6,6 +6,8 @@ sidebar:
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
 import ImageCenter  from '@components/ImageCenter.astro';
 
 import { frontmatter as EKCP_ESP32C3 } from './description/EKCP-ESP32C3.mdx';
@@ -42,10 +44,15 @@ import { frontmatter as EKSP_CAN } from './description/EKSP-CAN.mdx';
 import hero from "../../../assets/hero.png";
 
 <ImageCenter
-    image={hero}
-    label="Рендер сборки модулей"
-    priority={true}
-/>
+    label="Рендер примера сборки модулей"
+    width="350px"
+>
+    <Image
+        src={hero}
+        alt="Рендер примера сборки модулей"
+        layout='constrained'
+    />
+</ImageCenter>
 
 Основные характеристики:
 - Контроллеры на основе распространённых одноплатных компьютеров (Raspberry Pi, Luckfox Lyra)
@@ -267,7 +274,13 @@ import Dimensions from "./dimensions.svg";
 
 import IBus from "./ibus.svg";
 
-<IBus />
+<ImageCenter
+    label="Схема коннектора межмодульной шины EKBS"
+    width="600px"
+>
+    <IBus />
+</ImageCenter>
+
 
 Модули подключаются друг к другу через 12-пиновый FFC-кабель. В этом кабеле передаётся:
 

@@ -3,6 +3,7 @@ const { top, bottom, pcb_article } = Astro.props;
 
 import { Image } from "astro:assets";
 import { Zoom } from "starlight-image-zoom/components";
+import { LinkButton } from "@astrojs/starlight/components";
 
 const top_alt = `${pcb_article} - вид сверху`;
 const bottom_alt = `${pcb_article} - вид снизу`;
@@ -38,6 +39,6 @@ const step = `https://disk.yandex.ru/d/RpAkCNVVWayxYg/${pcb_article}.step`;
     </div>
 </div>
 
-<p>
-    <a href={step}>Скачать 3D STEP</a>
-</p>
+<LinkButton href={step} variant="secondary" icon="download" iconPlacement="start">
+    Скачать 3D STEP
+</LinkButton>

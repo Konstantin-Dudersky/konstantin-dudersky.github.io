@@ -3,6 +3,8 @@ title: EKCP-LLP
 description: Модуль контроллера на базе одноплатника Luckfox Lyra.
 ---
 
+import { LinkButton } from "@astrojs/starlight/components";
+
 import PcbRender  from '@components/PcbRender.astro';
 import Options  from '@components/Options.astro';
 
@@ -112,5 +114,5 @@ import render_bottom from "./EKCP-LLP/render_x0y180z0.png";
 
 |  |  |  |
 | --- | --- | --- |
-| **DS3231M** даташит | [Скачать](/datasheets/DS3231M.pdf) | [Ссылка](https://www.analog.com/en/products/ds3231m.html) |
-| **RK3506B** даташит | [Скачать](/datasheets/RK3506B.pdf) | [Ссылка](https://github.com/LuckfoxTECH/Luckfox-Lyra-docs) |
+| **DS3231M** даташит | <LinkButton href="/datasheets/DS3231M.pdf" variant="minimal" icon="download" iconPlacement="start"> Скачать </LinkButton> | <LinkButton href="https://www.analog.com/en/products/ds3231m.html" variant="minimal" icon="external" iconPlacement="start"> Ссылка </LinkButton> |
+| **RK3506B** даташит | <LinkButton href="/datasheets/RK3506B.pdf" variant="minimal" icon="download" iconPlacement="start"> Скачать </LinkButton> | <LinkButton href="https://github.com/LuckfoxTECH/Luckfox-Lyra-docs" variant="minimal" icon="external" iconPlacement="start"> Ссылка </LinkButton> |

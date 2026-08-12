@@ -1,11 +1,10 @@
 ---
-const { image, label, priority } = Astro.props;
+const { label, width } = Astro.props;
 
-import { Image } from "astro:assets";
 import { Zoom } from "starlight-image-zoom/components";
 ---
 
-<style>
+<style define:vars={{ width }}>
     .pcb-render {
         display: flex;
         flex-direction: row;
@@ -15,14 +14,14 @@ import { Zoom } from "starlight-image-zoom/components";
 
     .pcb-render .column {
         margin: 0px;
-        width: 350px;
+        width: var(--width);
     }
 </style>
 
 <div class="pcb-render">
     <div class="column">
         <Zoom label={label}>
-            <Image src={image} alt={label} priority={priority} />
+            <slot />
         </Zoom>
     </div>
 </div>

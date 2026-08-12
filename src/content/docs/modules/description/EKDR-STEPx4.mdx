@@ -5,6 +5,7 @@ description: Модуль управления 4 шаговыми двигате
 
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
+import ImageCenter  from '@components/ImageCenter.astro';
 
 <p>
     { frontmatter.description }
@@ -65,7 +66,12 @@ import render_bottom from "./EKDR-STEPx4/render_x0y180z0.png";
 
 import Schematic from "./EKDR-STEPx4/schematic.svg";
 
-<Schematic />
+<ImageCenter
+    label="Схема коннектора межмодульной шины EKBS"
+    width="600px"
+>
+    <Schematic />
+</ImageCenter>
 
 [EKMC-ESP32C3](/modules/description/ekmc-esp32c3)
 
