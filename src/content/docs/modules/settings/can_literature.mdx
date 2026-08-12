@@ -4,20 +4,27 @@ description: Ссылки на статьи и книги по CAN-шине
 ---
 
 import { Image } from 'astro:assets';
+import { LinkButton } from '@astrojs/starlight/components';
 
-Ниже приводятся некоторые книги и статьи по CAN-шине.
+import ImageCenter2  from '@components/ImageCenter2.astro';
+
+В модулях [серии EK](/modules/overview/) для обмена данными используется шина CAN. Ниже приводятся некоторые книги и статьи по CAN-шине.
 
 ## Техническое обеспечение телематических систем
 
 import image_fel17M554 from './can_literature/fel17M554.png';
 
-<Image
-    src={image_fel17M554}
-    alt="Обложка книги Техническое обеспечение телематических систем"
-    layout='constrained'
-    width={200}
-    data-zoom-off
-/>
+<ImageCenter2
+    label="Обложка книги Техническое обеспечение телематических систем"
+    width="200px"
+>
+    <Image
+        src={image_fel17M554}
+        alt="Обложка книги Техническое обеспечение телематических систем"
+        layout='constrained'
+        priority={true}
+    />
+</ImageCenter2>
 
 Техническое обеспечение телематических систем. Системы определения местоположения и идентификации транспортных средств: методическое
 пособие / Н.Ю. Лахтина, К.Г. Манушакян. – М.: МАДИ, 2017. – 68 с
@@ -29,38 +36,60 @@ import image_fel17M554 from './can_literature/fel17M554.png';
 
 Методическое пособие предназначено для бакалавров, специалистов и магистров специализаций «Телематика на автомобильном транспорте», «Телематика в автосервисе» и специальностей «Организация и безопасность движения» (190702), «Организация перевозок и управление на транспорте» (190701).
 
-[Скачать](/books/fel17M554.pdf)
+<LinkButton
+    href = "/books/fel17M554.pdf"
+    variant = "secondary"
+    icon = "download"
+    iconPlacement = "start"
+>
+    Скачать
+</LinkButton>
 
 
 ## Introduction to the Controller Area Network (CAN)
 
 import image_sloa101b from './can_literature/sloa101b.png';
 
-<Image
-    src={image_sloa101b}
-    alt="Обложка статьи Introduction to the Controller Area Network (CAN)"
-    layout='constrained'
-    width={200}
-    data-zoom-off
-/>
+<ImageCenter2
+    label="Обложка статьи Introduction to the Controller Area Network (CAN)"
+    width="200px"
+>
+    <Image
+        src={image_sloa101b}
+        alt="Обложка статьи Introduction to the Controller Area Network (CAN)"
+        layout='constrained'
+    />
+</ImageCenter2>
+
 
 Texas Instruments, Applicaton Report SLOA101B
 
 A controller area network (CAN) is ideally suited to the many high-level industrial protocols embracing CAN and ISO-11898:2003 as their physical layer. Its cost, performance, and upgradeability provide for tremendous flexibility in system design. This application report presents an introduction to the CAN fundamentals, operating principles, and the implementation of a basic CAN bus with TI's CAN transceivers and DSPs. The electrical layer requirements of a CAN bus are discussed along with the importance of the different features of a TI CAN transceiver.
 
-[Скачать](/books/sloa101b.pdf)
+<LinkButton
+    href = "/books/sloa101b.pdf"
+    variant = "secondary"
+    icon = "download"
+    iconPlacement = "start"
+>
+    Скачать
+</LinkButton>
+
 
 ## How to design a robust automotive CAN system
 
 import image_an5878 from './can_literature/an5878.png';
 
-<Image
-    src={image_an5878}
-    alt="Обложка статьи How to design a robust automotive CAN system"
-    layout='constrained'
-    width={200}
-    data-zoom-off
-/>
+<ImageCenter2
+    label="Обложка статьи How to design a robust automotive CAN system"
+    width="200px"
+>
+    <Image
+        src={image_an5878}
+        alt="Обложка статьи How to design a robust automotive CAN system"
+        layout='constrained'
+    />
+</ImageCenter2>
 
 STMicroelectronics, Applicaton Note AN5878.
 
@@ -73,23 +102,40 @@ This application note will:
 - Detail the applicable surges to a CAN node.
 - Explain the main characteristics of a CAN protection device and how to select the right ESDCAN part number
 
-[Скачать](/books/an5878.pdf)
+<LinkButton
+    href = "/books/an5878.pdf"
+    variant = "secondary"
+    icon = "download"
+    iconPlacement = "start"
+>
+    Скачать
+</LinkButton>
 
 
 ## CAN System Engineering
 
 import image from './can_literature/lawrenz_wolfhard_can_system_engineering_from_theory_to_pract.png';
 
-<Image
-    src={image}
-    alt="Обложка книги CAN System Engineering"
-    layout='constrained'
-    width={200}
-    data-zoom-off
-/>
+<ImageCenter2
+    label="Обложка книги CAN System Engineering"
+    width="200px"
+>
+    <Image
+        src={image}
+        alt="Обложка книги CAN System Engineering"
+        layout='constrained'
+    />
+</ImageCenter2>
 
 Second Edition. — Springer London Heidelberg New York Dordrecht, 2013. 375p. — ISBN: 978-1-4471-5612-3, ISBN: 978-1-4471-5613-0 (eBook).
 
 Controller Area Network — CAN — is a communication protocol, which had been developed by R. Bosch GmbH in the beginning of the 1980s.The design focus was to support robust applications in cars. The protocol then was introduced to the market in cooperation of Bosch and Intel. In the year 1990 Mercedes Benz was the first car manufacturer who applied CAN in a series application, in the S-class car for networking of body electronics. The first suppliers of CAN modules at that time were Intel and Motorola. Currently almost all minor and major semiconductor manufacturers have CAN products in their portfolio. In 1997 24 million CAN interfaces were produced in 1 year; 2 years later there were already more than three times as many. Currently there will probably be more than a billion per year.
 
-[Скачать](/books/lawrenz_wolfhard_can_system_engineering_from_theory_to_pract.pdf)
+<LinkButton
+    href = "/books/lawrenz_wolfhard_can_system_engineering_from_theory_to_pract.pdf"
+    variant = "secondary"
+    icon = "download"
+    iconPlacement = "start"
+>
+    Скачать
+</LinkButton>

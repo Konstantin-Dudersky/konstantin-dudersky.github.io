@@ -1,0 +1,27 @@
+---
+const { label, width } = Astro.props;
+
+import { Zoom } from "starlight-image-zoom/components";
+---
+
+<style define:vars={{ width }}>
+    .pcb-render {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pcb-render .column {
+        margin: 0px;
+        width: var(--width);
+    }
+</style>
+
+<div class="pcb-render">
+    <div class="column">
+        <Zoom label={label}>
+            <slot />
+        </Zoom>
+    </div>
+</div>
