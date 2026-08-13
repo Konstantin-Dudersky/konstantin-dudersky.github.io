@@ -5,8 +5,9 @@ description: Модуль контроллера на базе одноплат�
 
 import { LinkButton } from "@astrojs/starlight/components";
 
-import PcbRender  from '@components/PcbRender.astro';
+import Links from '@components/Links.astro';
 import Options  from '@components/Options.astro';
+import PcbRender  from '@components/PcbRender.astro';
 
 
 <p>{frontmatter.description}</p>
@@ -112,7 +113,17 @@ import render_bottom from "./EKCP-LLP/render_x0y180z0.png";
 
 ## Ссылки
 
-|  |  |  |
-| --- | --- | --- |
-| **DS3231M** даташит | <LinkButton href="/datasheets/DS3231M.pdf" variant="minimal" icon="download" iconPlacement="start"> Скачать </LinkButton> | <LinkButton href="https://www.analog.com/en/products/ds3231m.html" variant="minimal" icon="external" iconPlacement="start"> Ссылка </LinkButton> |
-| **RK3506B** даташит | <LinkButton href="/datasheets/RK3506B.pdf" variant="minimal" icon="download" iconPlacement="start"> Скачать </LinkButton> | <LinkButton href="https://github.com/LuckfoxTECH/Luckfox-Lyra-docs" variant="minimal" icon="external" iconPlacement="start"> Ссылка </LinkButton> |
+<Links
+    links={[
+        {
+            label: "DS3231M даташит",
+            download: "/datasheets/DS3231M.pdf",
+            link: "https://www.analog.com/en/products/ds3231m.html",
+        },
+        {
+            label: "RK3506B даташит",
+            download: "/datasheets/RK3506B.pdf",
+            link: "https://github.com/LuckfoxTECH/Luckfox-Lyra-docs",
+        },
+    ]}
+/>

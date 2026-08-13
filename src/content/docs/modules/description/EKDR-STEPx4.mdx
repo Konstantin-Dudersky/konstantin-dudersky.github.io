@@ -3,6 +3,7 @@ title: EKDR-STEPx4
 description: Модуль управления 4 шаговыми двигателями.
 ---
 
+import Links  from '@components/Links.astro';
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 import ImageCenter  from '@components/ImageCenter.astro';
@@ -75,19 +76,49 @@ import Schematic from "./EKDR-STEPx4/schematic.svg";
 
 [EKMC-ESP32C3](/modules/description/ekmc-esp32c3)
 
-### Создание импульсов в микроконтроллере ESP32
+### Задание импульсов STEP
 
-https://docs.espressif.com/projects/esp-idf/en/v6.0.2/esp32/api-reference/system/esp_timer.html
+Драйвер поворачивает шаговый двигатель на один микрошаг при получении импульсов на входе STEP. При этом можно задавать количество и частоту импульсов:
+- количество импульсов определяет угол поворота двигателя
+- частота импульсов (промежуток времени между импульсами) определяет скорость поворота двигателя
 
-Период вызова минимум 50 мкс. Это даёт возможность генерации импульсов до 10 кГц.
+В данном модуле импульсы STEP создаются в микроконтроллере ESP32-C3. Можно использовать несколько способов:
+- ESP timer
+- LED control (LEDC)
 
-https://docs.espressif.com/projects/esp-idf/en/v6.0.2/esp32/api-reference/peripherals/ledc.html
+#### ESP timer
 
-Возможность генерации импульсов до 40 МГц.
+ESP timer - это высокоуровневый программный таймер в ESP‑IDF, построенный поверх аппаратных таймеров, который позволяет вызывать пользовательские функции с микросекундной точностью.
+
+Документация приведена на сайте - [ссылка](https://docs.espressif.com/projects/esp-idf/en/v6.0.2/esp32/api-reference/system/esp_timer.html).
+
+Минимальный период вызова 50 мкс. Это даёт возможность генерации импульсов до 10 кГц. Для большинства задач этого достаточно, хотя и не покрывает все возможности драйвера **DRV8834S**, который может работать на частоте до 500 кГц.
+
+Используя ESP timer, можно точно отсчитать количество импульсов.
+
+#### LED control (LEDC)
+
+LED control (LEDC) - это аппаратный ШИМ-модуль в ESP32, предназначенный для генерации сигналов с регулируемой скважностью на выводах микроконтроллера.
+
+Документация приведена на сайте - [ссылка](https://docs.espressif.com/projects/esp-idf/en/v6.0.2/esp32/api-reference/peripherals/ledc.html).
+
+Возможность генерации импульсов до 40 МГц, что даёт возможность работы с драйвером **DRV8834S** на всех частотах.
+
+В отличие от ESP timer, рассчитать точное количество импульсов нельзя. Поэтому данный способ можно использовать в случае, когда шаговый двигатель должен работать на высоких частотах с заданием скорости.
 
 ## Ссылки
 
-|  |  |  |
-| --- | --- | --- |
-| **DRV8834S** даташит | [Скачать](/datasheets/drv8434s.pdf) | [Ссылка](https://www.ti.com/product/DRV8434S) |
-| **MCP23017** даташит | [Скачать](/datasheets/MCP23017.pdf) | [Ссылка](https://www.microchip.com/en-us/product/mcp23017) |
+<Links
+    links={[
+        {
+            label: "DRV8834S даташит",
+            download: "/datasheets/drv8434s.pdf",
+            link: "https://www.ti.com/product/DRV8434S",
+        },
+        {
+            label: "MCP23017 даташит",
+            download: "/datasheets/MCP23017.pdf",
+            link: "https://www.microchip.com/en-us/product/mcp23017",
+        },
+    ]}
+/>

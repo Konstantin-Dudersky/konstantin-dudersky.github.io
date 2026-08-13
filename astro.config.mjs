@@ -28,6 +28,7 @@ export default defineConfig({
       logo: {
         src: "./public/flat-color-icons--electronics.svg",
       },
+      tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
       social: [
         { icon: "telegram", label: "Telegram", href: "https://t.me/konstantin_dudersky" },
         { icon: "email", label: "Email", href: "mailto:mail@kdudersky.ru" },
@@ -51,7 +52,8 @@ export default defineConfig({
       components: {
         Header: "./src/components/Header.astro",
       },
-      plugins: [starlightScrollToTop(),
+      plugins: [
+        starlightScrollToTop(),
         md3Theme({
           // seed: "#27293a",
           density: "comfortable",
