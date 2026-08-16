@@ -15,29 +15,80 @@ import PcbRender  from '@components/PcbRender.astro';
 
 Основные характеристики:
 - 4 канала
+- Минимальная частота 4,8 Гц
+- Максимальная частота 40 МГц
 - Управление через гальванически изолированный CAN-интерфейс
 
 Область применения:
 
+При частотно-импульсной модуляции меняется частота импульсов, а скважность (или длительность) остаётся постоянной. PFM - pulse-frequency modulation.
 
 Для индикации состояния выхода подключается модуль [EKLD-10](/modules/description/ekld-10).
 
+### Диапазон частот в зависимости от разрешения
+
+| Разрешение | Макс. частота | Мин частота, Гц | Точность, % |
+| -- | -------- | -------- | ----- |
+| 1  | 40 МГц   | 39 кГц   | 50    |
+| 2  | 20 МГц   | 19,5 кГц | 25    |
+| 3  | 10 МГц   | 9,8 кГц  | 12,5  |
+| 4  | 5 МГц    | 4,9 кГц  | 6,3   |
+| 5  | 2,5 МГц  | 2,4 кГц  | 3,1   |
+| 6  | 1,25 МГц | 1,2 кГц  | 1,6   |
+| 7  | 625 кГц  | 610 Гц   | 0,8   |
+| 8  | 313 кГц  | 305 Гц   | 0,4   |
+| 9  | 156 кГц  | 152 Гц   | 0,2   |
+| 10 | 78 кГц   | 76,2 Гц  | 0,1   |
+| 11 | 39 кГц   | 38,1 Гц  | 0,05  |
+| 12 | 19,5 кГц | 19,1 Гц  | 0,024 |
+| 13 | 9,8 кГц  | 9,5 Гц   | 0,012 |
+| 14 | 4,9 кГц  | 4,8 Гц   | 0,006 |
+
+Частота рассчитывается по формуле:
+
+$$
+f = \frac{f_{C}}{ D \cdot 2^N}
+$$
+
+где:
+- $f_{C}$ — тактовая частота (80 МГц);
+- $D$ — делитель частоты;
+- $N$ — разрешение.
+
+Для получения максимальной частоты значение делителя $D = 1$.
+
+Для получения минимальной частоты значение делителя $D = 1024 + 255/256$.
+
+Точность рассчитывается по формуле:
+
+$$
+\epsilon = \frac{1}{2^N} \cdot 100\%
+$$
+
+где:
+- $N$ — разрешение.
+
 ## Схема внешних подключений
 
-import ExtConn from "./EKIO-PWMx16/ext_conn.svg";
+import ExtConn from "./EKIO-PFMx4/ext_conn.svg";
 
-<ExtConn />
+<ImageCenter
+    label="Схема внешних подключений модуля EKIO-PFMx4"
+    width="700px"
+>
+    <ExtConn />
+</ImageCenter>
 
 ## Конфигурация
 
-import { options_config } from './EKIO-PWMx16/options.ts';
+import { options_config } from './EKIO-PFMx4/options.ts';
 
 <Options options_config = { options_config } />
 
 ## Внешний вид
 
-import render_top from "./EKIO-PWMx16/render_x0y0z0.png";
-import render_bottom from "./EKIO-PWMx16/render_x0y180z0.png";
+import render_top from "./EKIO-PFMx4/render_x0y0z0.png";
+import render_bottom from "./EKIO-PFMx4/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
@@ -47,10 +98,10 @@ import render_bottom from "./EKIO-PWMx16/render_x0y180z0.png";
 
 ## Описание
 
-import Schematic from "./EKIO-PWMx16/schematic.svg";
+import Schematic from "./EKIO-PFMx4/schematic.svg";
 
 <ImageCenter
-    label="Функциональная схема модуля EKOP-PWMx16"
+    label="Функциональная схема модуля EKIO-PFMx4"
     width="700px"
 >
     <Schematic />
@@ -64,14 +115,15 @@ import Schematic from "./EKIO-PWMx16/schematic.svg";
 <Links
     links={[
         {
+            label: "CA-IS3760LB даташит",
+            download: "/datasheets/CA-IS3760xB.pdf",
+            link: "https://www.nxp.com/products/power-drivers/lighting-driver-and-controller-ics/led-drivers/16-channel-12-bit-pwm-fm-plus-ic-bus-led-driver:PCA9685",
+        },
+        {
             label: "ESP32-C3 даташит",
             download: "/datasheets/ESP32-C3.pdf",
             link: "https://www.espressif.com/en/products/socs/esp32-c3",
         },
-        {
-            label: "PCA9685 даташит",
-            download: "/datasheets/PCA9685.pdf",
-            link: "https://www.nxp.com/products/power-drivers/lighting-driver-and-controller-ics/led-drivers/16-channel-12-bit-pwm-fm-plus-ic-bus-led-driver:PCA9685",
-        },
+
     ]}
 />

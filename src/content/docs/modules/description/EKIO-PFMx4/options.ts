@@ -8,23 +8,7 @@ export const options_config: IOptionsConfig = {
   base_price: 777,
   options: [
     {
-      name: "Количество каналов выходов",
-      default: 1,
-      variants: [
-        {
-          name: "8",
-          desc: "8 каналов",
-          price: 777,
-        } as IOptionVariant,
-        {
-          name: "16",
-          desc: "16 каналов",
-          price: 777,
-        } as IOptionVariant,
-      ],
-    } as IOption,
-    {
-      name: "Напряжение сигнала ШИМ",
+      name: "Напряжение сигнала ЧИМ",
       default: 1,
       variants: [
         {
