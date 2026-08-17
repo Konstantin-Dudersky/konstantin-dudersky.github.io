@@ -8,7 +8,7 @@ export const options_config: IOptionsConfig = {
   base_price: 777,
   options: [
     {
-      name: "Напряжение сигнала ЧИМ",
+      name: "Амплитуда напряжения сигнала ЧИМ",
       default: 1,
       variants: [
         {
