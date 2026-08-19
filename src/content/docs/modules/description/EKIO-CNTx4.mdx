@@ -1,0 +1,34 @@
+---
+title: EKIO-CNTx4
+description: 4-канальный модуль быстрого счёта.
+---
+import Options  from '@components/Options.astro';
+import PcbRender  from '@components/PcbRender.astro';
+
+import Links  from '@components/Links.astro';
+import Schematic from "./EKIO-DIx32/schematic.svg";
+import ExtConn from "./EKIO-DIx32/ext_conn.svg";
+import { options_config } from './EKIO-DIx32/options.ts';
+
+
+## Ссылки
+
+<Links
+    links={[
+        {
+            label: "LS7366R даташит",
+            download: "/datasheets/LS7366R.pdf",
+            link: "https://lsicsi.com/products/ls7366r-s-ls7366r-ts-ls7366r/",
+        },
+        {
+            label: "ESP32-C3 даташит",
+            download: "/datasheets/ESP32-C3.pdf",
+            link: "https://www.espressif.com/en/products/socs/esp32-c3",
+        },
+        {
+            label: "CA-IS3988P даташит",
+            download: "/datasheets/CA-IS3988P.pdf",
+            link: "https://e.chipanalog.com/products/interface/isolated/iso5/1150",
+        },
+    ]}
+/>
