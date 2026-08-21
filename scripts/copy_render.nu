@@ -34,6 +34,7 @@ def copy_kicad_image [article: string, filename: string] {
 copy_pcb_render EKCP-ESP32C3 0.2.0
 copy_pcb_render EKCP-LLP 0.2.0
 copy_pcb_render EKCP-RP 0.2.0
+copy_pcb_render EKDR-StepAx1 0.2.0
 copy_pcb_render EKDR-STEPx4 0.2.0
 copy_pcb_render EKIF-1Wire 0.2.0
 copy_pcb_render EKIF-I2Cx8 0.2.0
