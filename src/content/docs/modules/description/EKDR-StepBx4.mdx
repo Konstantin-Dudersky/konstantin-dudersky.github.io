@@ -48,14 +48,14 @@ import ImageCenter  from '@components/ImageCenter.astro';
 
 ## Конфигурация
 
-import { options_config } from './EKDR-STEPx4/options.ts';
+import { options_config } from './EKDR-StepBx4/options.ts';
 
 <Options options_config = {options_config} />
 
 ## Внешний вид
 
-import render_top from "./EKDR-STEPx4/render_x0y0z0.png";
-import render_bottom from "./EKDR-STEPx4/render_x0y180z0.png";
+import render_top from "./EKDR-StepBx4/render_x0y0z0.png";
+import render_bottom from "./EKDR-StepBx4/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
@@ -65,10 +65,10 @@ import render_bottom from "./EKDR-STEPx4/render_x0y180z0.png";
 
 ## Описание
 
-import Schematic from "./EKDR-STEPx4/schematic.svg";
+import Schematic from "./EKDR-StepBx4/schematic.svg";
 
 <ImageCenter
-    label="Функциональная схема модуля EKDR-STEPx4"
+    label="Функциональная схема модуля EKDR-StepBx4"
     width="700px"
 >
     <Schematic />

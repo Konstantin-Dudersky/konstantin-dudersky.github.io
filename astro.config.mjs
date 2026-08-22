@@ -49,6 +49,7 @@ export default defineConfig({
       },
       lastUpdated: true,
       favicon: "/flat-color-icons--electronics.svg",
+      disable404Route: true,
       components: {
         Header: "./src/components/Header.astro",
       },

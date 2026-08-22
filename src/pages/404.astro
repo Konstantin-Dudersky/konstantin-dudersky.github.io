@@ -1,0 +1,15 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+---
+
+<StarlightPage frontmatter={{ title: "Страница не найдена", template: "splash" }}>
+    <main>
+        <h1>404</h1>
+        <p>Извините, но страница, которую вы ищете, не существует.</p>
+        <p>
+            Вы можете вернуться на <a href="/">главную страницу</a> или перейти в <a
+                href="/modules/overview">каталог модулей</a
+            >.
+        </p>
+    </main>
+</StarlightPage>
