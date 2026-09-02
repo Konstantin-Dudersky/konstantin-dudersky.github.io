@@ -1,14 +1,15 @@
 ---
-title: EKIO-AIWx4
+title: EKIO-AIW
 description: 4-канальный модуль измерения тензодатчиков.
 ---
 
+import ImageCenter  from '@components/ImageCenter.astro';
+import Links  from '@components/Links.astro';
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import ExtConn from "./EKIO-AIWx4/ext_conn.svg";
-import Schematic from "./EKIO-AIWx4/schematic.svg";
-import { options_config } from './EKIO-AIWx4/options.ts';
+import Schematic from "./EKIO-AIW/schematic.svg";
+import { options_config } from './EKIO-AIW/options.ts';
 
 <p>
     { frontmatter.description }
@@ -32,7 +33,14 @@ import { options_config } from './EKIO-AIWx4/options.ts';
 
 ## Схема внешних подключений
 
-<ExtConn />
+import ExtConn from "./EKIO-AIW/ext_conn.svg";
+
+<ImageCenter
+    label="Схема внешних подключений модуля EKIO-AIW"
+    width="700px"
+>
+    <ExtConn alt="Схема внешних подключений модуля EKIO-AIW"/>
+</ImageCenter>
 
 При подключении 4-проводных тензодатчиков необходимо поставить перемычки EXC+, SEN+ и EXC-, SEN-.
 
@@ -42,8 +50,8 @@ import { options_config } from './EKIO-AIWx4/options.ts';
 
 ## Внешний вид
 
-import render_top from "./EKIO-AIWx4/render_x0y0z0.png";
-import render_bottom from "./EKIO-AIWx4/render_x0y180z0.png";
+import render_top from "./EKIO-AIW/render_x0y0z0.png";
+import render_bottom from "./EKIO-AIW/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
@@ -53,23 +61,42 @@ import render_bottom from "./EKIO-AIWx4/render_x0y180z0.png";
 
 ## Описание
 
-<Schematic />
+<ImageCenter
+    label="Функциональная схема модуля EKIO-AIW"
+    width="700px"
+>
+    <Schematic alt="Функциональная схема модуля EKIO-AIW"/>
+</ImageCenter>
 
 На плате установлен микроконтроллер **ESP32-C3**, который опрашивает АЦП по интерфейсу SPI и отправляет данные во внутреннюю шину IBus через CAN-шину.
 
 Распиновка микроконтроллера **ESP32-C3**:
 
 - SPI
-  - MOSI - GPIO 3
-  - MISO - GPIO 4
-  - SCK - GPIO 1
-  - CS - GPIO 0
+    - MOSI - GPIO 3
+    - MISO - GPIO 4
+    - SCK - GPIO 1
+    - CS - GPIO 0
 - CAN:
     - RX - GPIO 1
     - TX - GPIO 0
 
 **ESP32-C3** передаёт данные на CAN-шину через CAN-трансивер **CA-IS3050**.
 
-|  |  |  |
-| --- | --- | --- |
-| **AD7193** даташит | [Скачать](/datasheets/AD7193.pdf) | [Ссылка](https://www.analog.com/en/products/ad7193.html) |
+## Ссылки
+
+<Links
+    links={[
+        {
+            label: "AD7193 даташит",
+            download: "/datasheets/AD7193.pdf",
+            link: "https://www.analog.com/en/products/ad7193.html",
+        },
+        {
+            label: "ESP32-C3 даташит",
+            download: "/datasheets/ESP32-C3.pdf",
+            link: "https://www.espressif.com/en/products/socs/esp32-c3",
+        },
+
+    ]}
+/>

@@ -34,13 +34,13 @@ def copy_kicad_image [article: string, filename: string] {
 copy_pcb_render EKCP-ESP32C3 0.2.0
 copy_pcb_render EKCP-LLP 0.2.0
 copy_pcb_render EKCP-RP 0.2.0
-copy_pcb_render EKDR-StepAx1 0.2.0
+copy_pcb_render EKDR-StepAx1 0.2.1
 copy_pcb_render EKDR-StepBx4 0.2.0
 copy_pcb_render EKIF-1Wire 0.2.0
-copy_pcb_render EKIF-I2Cx8 0.2.0
+copy_pcb_render EKIF-I2Cx8 0.2.1
 copy_pcb_render EKIO-AITx8 0.2.0
 copy_pcb_render EKIO-AIVx8 0.2.0
-copy_pcb_render EKIO-AIWx4 0.2.0
+copy_pcb_render EKIO-AIW 0.2.0
 copy_pcb_render EKIO-AQx4 0.2.0
 copy_pcb_render EKIO-CNTx4 0.2.0
 copy_pcb_render EKIO-DIx32 0.2.0
@@ -48,12 +48,12 @@ copy_pcb_render EKIO-DQx16 0.2.0
 copy_pcb_render EKIO-AIPDCx8 0.2.0
 copy_pcb_render EKIO-PFMx4 0.2.0
 copy_pcb_render EKIO-PWMx16 0.2.0
-copy_pcb_render EKIO-RQx8 0.2.0
+copy_pcb_render EKIO-RQx8 0.2.1
 copy_pcb_render EKLD-10 0.2.0
 copy_pcb_render EKLD-18 0.2.0
-copy_pcb_render EKMC-ESP32C3 0.2.0
+copy_pcb_render EKMC-ESP32C3 0.2.1
 copy_pcb_render EKPS-20W 0.2.0
-copy_pcb_render EKSP-CAN 0.2.0
+copy_pcb_render EKSP-CAN 0.2.1
 
 
 copy_kicad_image EKIO-AIVx8 kicad_images-pmio_aiv_voltage_channel
