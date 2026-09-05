@@ -1,5 +1,5 @@
 ---
-title: EKIO-AITx8
+title: EKIO-AIT
 description: Модуль для подключения 8 термопар.
 ---
 
@@ -7,9 +7,9 @@ import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 import CanFrame from '@components/CanFrame.astro';
 
-import ExtConn from "./EKIO-AITx8/ext_conn.svg";
-import Schematic from "./EKIO-AITx8/schematic.svg";
-import { options_config } from './EKIO-AITx8/options.ts';
+import ExtConn from "./EK-IO-AIT/ext_conn.svg";
+import Schematic from "./EK-IO-AIT/schematic.svg";
+import { options_config } from './EK-IO-AIT/options.ts';
 
 <p>
     { frontmatter.description }
@@ -40,8 +40,8 @@ import { options_config } from './EKIO-AITx8/options.ts';
 
 ## Внешний вид
 
-import render_top from "./EKIO-AITx8/render_x0y0z0.png";
-import render_bottom from "./EKIO-AITx8/render_x0y180z0.png";
+import render_top from "./EK-IO-AIT/render_x0y0z0.png";
+import render_bottom from "./EK-IO-AIT/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
