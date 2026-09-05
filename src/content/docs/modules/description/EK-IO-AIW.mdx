@@ -1,5 +1,5 @@
 ---
-title: EKIO-AIW
+title: EK-IO-AIW
 description: 4-канальный модуль измерения тензодатчиков.
 ---
 
@@ -8,8 +8,8 @@ import Links  from '@components/Links.astro';
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import Schematic from "./EKIO-AIW/schematic.svg";
-import { options_config } from './EKIO-AIW/options.ts';
+import Schematic from "./EK-IO-AIW/schematic.svg";
+import { options_config } from './EK-IO-AIW/options.ts';
 
 <p>
     { frontmatter.description }
@@ -33,13 +33,13 @@ import { options_config } from './EKIO-AIW/options.ts';
 
 ## Схема внешних подключений
 
-import ExtConn from "./EKIO-AIW/ext_conn.svg";
+import ExtConn from "./EK-IO-AIW/ext_conn.svg";
 
 <ImageCenter
-    label="Схема внешних подключений модуля EKIO-AIW"
+    label="Схема внешних подключений модуля EK-IO-AIW"
     width="700px"
 >
-    <ExtConn alt="Схема внешних подключений модуля EKIO-AIW"/>
+    <ExtConn alt="Схема внешних подключений модуля EK-IO-AIW"/>
 </ImageCenter>
 
 При подключении 4-проводных тензодатчиков необходимо поставить перемычки EXC+, SEN+ и EXC-, SEN-.
@@ -50,8 +50,8 @@ import ExtConn from "./EKIO-AIW/ext_conn.svg";
 
 ## Внешний вид
 
-import render_top from "./EKIO-AIW/render_x0y0z0.png";
-import render_bottom from "./EKIO-AIW/render_x0y180z0.png";
+import render_top from "./EK-IO-AIW/render_x0y0z0.png";
+import render_bottom from "./EK-IO-AIW/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
@@ -62,10 +62,10 @@ import render_bottom from "./EKIO-AIW/render_x0y180z0.png";
 ## Описание
 
 <ImageCenter
-    label="Функциональная схема модуля EKIO-AIW"
+    label="Функциональная схема модуля EK-IO-AIW"
     width="700px"
 >
-    <Schematic alt="Функциональная схема модуля EKIO-AIW"/>
+    <Schematic alt="Функциональная схема модуля EK-IO-AIW"/>
 </ImageCenter>
 
 На плате установлен микроконтроллер **ESP32-C3**, который опрашивает АЦП по интерфейсу SPI и отправляет данные во внутреннюю шину IBus через CAN-шину.

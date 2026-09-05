@@ -40,7 +40,7 @@ copy_pcb_render EKIF-1Wire 0.2.0
 copy_pcb_render EKIF-I2Cx8 0.2.1
 copy_pcb_render EK-IO-AIT 0.2.0
 copy_pcb_render EKIO-AIVx8 0.2.0
-copy_pcb_render EKIO-AIW 0.2.0
+copy_pcb_render EK-IO-AIW 0.2.0
 copy_pcb_render EKIO-AQx4 0.2.0
 copy_pcb_render EKIO-CNTx4 0.2.0
 copy_pcb_render EKIO-DIx32 0.2.0
