@@ -68,20 +68,20 @@ import render_bottom from "./EK-IO-AIW/render_x0y180z0.png";
     <Schematic alt="Функциональная схема модуля EK-IO-AIW"/>
 </ImageCenter>
 
-На плате установлен микроконтроллер **ESP32-C3**, который опрашивает АЦП по интерфейсу SPI и отправляет данные во внутреннюю шину IBus через CAN-шину.
+[EKMC-ESP32C3](/modules/description/ekmc-esp32c3) - плата с микроконтроллером ESP32-C3 для управления работой модуля. Выполняет следующие функции:
+- конфигурирует АЦП AD7193 по протоколу SPI
+- последовательно переключает каналы АЦП AD7193 и считывает данные
+- передаёт данные измерения через шину CAN
 
 Распиновка микроконтроллера **ESP32-C3**:
 
 - SPI
-    - MOSI - GPIO 3
-    - MISO - GPIO 4
-    - SCK - GPIO 1
-    - CS - GPIO 0
-- CAN:
-    - RX - GPIO 1
-    - TX - GPIO 0
+    - MOSI - GPIO 1
+    - MISO - GPIO 0
+    - SCK - GPIO 3
+    - CS - GPIO 2
 
-**ESP32-C3** передаёт данные на CAN-шину через CAN-трансивер **CA-IS3050**.
+В качестве АЦП используется чип AD7193 компании Analog Devices.
 
 ## Ссылки
 
@@ -97,6 +97,5 @@ import render_bottom from "./EK-IO-AIW/render_x0y180z0.png";
             download: "/datasheets/ESP32-C3.pdf",
             link: "https://www.espressif.com/en/products/socs/esp32-c3",
         },
-
     ]}
 />
