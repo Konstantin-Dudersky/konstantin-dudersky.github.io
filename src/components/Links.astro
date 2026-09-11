@@ -38,47 +38,15 @@ const { links } = Astro.props;
 </style>
 
 <table>
-    {
-        links.map((item) => (
-            <tr>
-                <td>{item.label}</td>
-                <td>
-                    <a href={item.download}>Скачать</a>
-                </td>
-                <td>
-                    <a href={item.link}>Ссылка</a>
-                </td>
-            </tr>
-        ))
-    }
+    {links.map((item) => (
+        <tr>
+            <td>{item.label}</td>
+            <td>
+                <a href={item.download}>Скачать</a>
+            </td>
+            <td>
+                <a href={item.link}>Ссылка</a>
+            </td>
+        </tr>
+    ))}
 </table>
-
-<!-- ## Ссылки | | | | | --- | --- | --- | | **DS3231M** даташит | <LinkButton
-    href="/datasheets/DS3231M.pdf"
-    variant="minimal"
-    icon="download"
-    iconPlacement="start"
->
-    Скачать
-</LinkButton> | <LinkButton
-    href="https://www.analog.com/en/products/ds3231m.html"
-    variant="minimal"
-    icon="external"
-    iconPlacement="start"
->
-    Ссылка
-</LinkButton> | | **RK3506B** даташит | <LinkButton
-    href="/datasheets/RK3506B.pdf"
-    variant="minimal"
-    icon="download"
-    iconPlacement="start"
->
-    Скачать
-</LinkButton> | <LinkButton
-    href="https://github.com/LuckfoxTECH/Luckfox-Lyra-docs"
-    variant="minimal"
-    icon="external"
-    iconPlacement="start"
->
-    Ссылка
-</LinkButton> | -->

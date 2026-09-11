@@ -1,0 +1,9 @@
+[package]
+name = "can_dbc_parser"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+can-dbc = { version = "10.0.0" }
+tracing = { version = "0.1.44" }
+tracing-subscriber = { version = "0.3.23" }
