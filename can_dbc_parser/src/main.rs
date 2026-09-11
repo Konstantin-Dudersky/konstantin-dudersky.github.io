@@ -1,6 +1,6 @@
 mod module;
 
-use can_dbc::{Dbc, Message, MessageId, Signal};
+use can_dbc::{Dbc, Message, MessageId, Signal, ValDescription};
 use tracing::warn;
 
 use std::fs;
@@ -65,17 +65,29 @@ fn can_msg_to_html(msg: &Message, dbc: &Dbc) -> String {
         .signals
         .iter()
         .map(|signal| can_signal_to_html(signal, msg.id, dbc))
+        .collect::<Vec<(String, Option<String>)>>();
+
+    let all_signals = signals
+        .iter()
+        .map(|i| i.0.clone())
         .collect::<Vec<String>>()
+        .join("\n");
+
+    let val_desc = signals
+        .iter()
+        .filter_map(|s| s.1.clone())
+        .collect::<Vec<_>>()
         .join("\n");
 
     HTML_MSG
         .replace("{id}", &id)
         .replace("{message_comment}", message_comment)
         .replace("{size}", &size.to_string())
-        .replace("{signals}", &signals)
+        .replace("{signals}", &all_signals)
+        .replace("{val_desc}", &val_desc)
 }
 
-fn can_signal_to_html(signal: &Signal, id: MessageId, dbc: &Dbc) -> String {
+fn can_signal_to_html(signal: &Signal, id: MessageId, dbc: &Dbc) -> (String, Option<String>) {
     let name = signal.name.clone();
 
     let comment = match dbc.signal_comment(id, &name) {
@@ -103,7 +115,7 @@ fn can_signal_to_html(signal: &Signal, id: MessageId, dbc: &Dbc) -> String {
 
     let start_bit = signal.start_bit;
 
-    HTML_SIGNAL
+    let html_signal = HTML_SIGNAL
         .replace("{name}", &name)
         .replace("{comment}", comment)
         .replace("{start_bit}", &start_bit.to_string())
@@ -112,7 +124,29 @@ fn can_signal_to_html(signal: &Signal, id: MessageId, dbc: &Dbc) -> String {
         .replace("{factor}", &factor.to_string())
         .replace("{offset}", &offset.to_string())
         .replace("{min}", &min.to_string())
-        .replace("{max}", &max.to_string())
+        .replace("{max}", &max.to_string());
+
+    // Ищем, есть ли перечень вариантов у значения сигнала
+    let val_desc = dbc.value_descriptions_for_signal(id, &name);
+    let val_desc = match val_desc {
+        Some(v) => Some(value_description_to_html(v)),
+        None => None,
+    };
+
+    (html_signal, val_desc)
+}
+
+fn value_description_to_html(val_descs: &[ValDescription]) -> String {
+    let items = val_descs
+        .iter()
+        .map(|desc| {
+            HTML_VAL_DESC_ITEM
+                .replace("{id}", &desc.id.to_string())
+                .replace("{description}", &desc.description)
+        })
+        .collect::<Vec<_>>()
+        .join("\n");
+    HTML_VAL_DESC.replace("{items}", &items)
 }
 
 const HTML_FULL: &str = r#"
@@ -161,6 +195,8 @@ const HTML_MSG: &str = r#"
             {signals}
         </tbody>
     </table>
+
+    {val_desc}
 </details>"#;
 
 const HTML_SIGNAL: &str = r#"
@@ -172,5 +208,26 @@ const HTML_SIGNAL: &str = r#"
     <td>{offset}</td>
     <td>{min}</td>
     <td>{max}</td>
+</tr>
+"#;
+
+const HTML_VAL_DESC: &str = r#"
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Описание</th>
+        </tr>
+    </thead>
+    <tbody>
+        {items}
+    </tbody>
+</table>
+"#;
+
+const HTML_VAL_DESC_ITEM: &str = r#"
+<tr>
+    <td>{id}</td>
+    <td>{description}</td>
 </tr>
 "#;
