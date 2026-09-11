@@ -3,178 +3,138 @@
 ---
 
 <style>
+    thead tr > *:not(:first-child) {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        white-space: nowrap;
+    }
 
+    tr > *:not(:first-child) {
+        text-align: center;
+    }
 </style>
+
+<h3>Модуль читает</h3>
+
+<h3>Модуль создаёт</h3>
 
 
 <details>
-    <summary>0x030 - Статус модуля </summary>
-    <ul>
-        <li>Название: EKIO_AIT_module_status</li>
-        <li>Идентификатор: 0x030</li>
-        <li>Длина: 8 байт</li>
-    </ul>
+    <summary>0x030 Статус модуля </summary>
+    <p>Название: EKIO_AIT_module_status</p>
+    <p>Идентификатор: 0x030</p>
+    <p>Длина: 8 байт</p>
 
     <table>
         <thead>
             <tr>
-                <th>Название</th>
-                <th>Свойства</th>
-                <th>Описание</th>
+                <th></th>
+                <th>Начальный бит</th>
+                <th>Размер, бит</th>
+                <th>Масштаб</th>
+                <th>Смещение</th>
+                <th>Минимум</th>
+                <th>Максимум</th>
             </tr>
         </thead>
         <tbody>
             
 <tr>
-    <td>module_address</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 0</li>
-            <li>Длина: 4 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 15</li>
-        </ul>
-    </td>
-    <td>Адрес_модуля</td>
+    <td>module_address <br> Адрес модуля</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
 </tr>
 
 
 <tr>
-    <td>ads1115_0_init_completed</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 8</li>
-            <li>Длина: 1 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 1</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>ads1115_0_init_completed <br> </td>
+    <td>8</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
 </tr>
 
 
 <tr>
-    <td>ads1115_1_init_completed</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 9</li>
-            <li>Длина: 1 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 1</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>ads1115_1_init_completed <br> </td>
+    <td>9</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
 </tr>
 
 
 <tr>
-    <td>ads1115_2_init_completed</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 10</li>
-            <li>Длина: 1 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 1</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>ads1115_2_init_completed <br> </td>
+    <td>10</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
 </tr>
 
 
 <tr>
-    <td>ads1115_3_init_completed</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 11</li>
-            <li>Длина: 1 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 1</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>ads1115_3_init_completed <br> </td>
+    <td>11</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
 </tr>
 
 
 <tr>
-    <td>tmp75_init_completed</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 12</li>
-            <li>Длина: 1 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 1</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>tmp75_init_completed <br> </td>
+    <td>12</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
 </tr>
 
 
 <tr>
-    <td>mcp23017_init_completed</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 13</li>
-            <li>Длина: 1 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 1</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>mcp23017_init_completed <br> </td>
+    <td>13</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
 </tr>
 
 
 <tr>
-    <td>ads1115_0_response_err_count</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 16</li>
-            <li>Длина: 4 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 15</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>ads1115_0_response_err_count <br> </td>
+    <td>16</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
 </tr>
 
 
 <tr>
-    <td>tmp75_response_err_count</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 20</li>
-            <li>Длина: 4 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 15</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>tmp75_response_err_count <br> </td>
+    <td>20</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
 </tr>
 
         </tbody>
@@ -182,139 +142,99 @@
 </details>
 
 <details>
-    <summary>0x031 - Показания отдельного канала </summary>
-    <ul>
-        <li>Название: EKIO_AIT_module_status</li>
-        <li>Идентификатор: 0x031</li>
-        <li>Длина: 8 байт</li>
-    </ul>
+    <summary>0x031 Показания отдельного канала </summary>
+    <p>Название: EKIO_AIT_module_status</p>
+    <p>Идентификатор: 0x031</p>
+    <p>Длина: 8 байт</p>
 
     <table>
         <thead>
             <tr>
-                <th>Название</th>
-                <th>Свойства</th>
-                <th>Описание</th>
+                <th></th>
+                <th>Начальный бит</th>
+                <th>Размер, бит</th>
+                <th>Масштаб</th>
+                <th>Смещение</th>
+                <th>Минимум</th>
+                <th>Максимум</th>
             </tr>
         </thead>
         <tbody>
             
 <tr>
-    <td>module_address</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 0</li>
-            <li>Длина: 4 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 15</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>module_address <br> </td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
 </tr>
 
 
 <tr>
-    <td>channel_number</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 4</li>
-            <li>Длина: 4 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 15</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>channel_number <br> </td>
+    <td>4</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
 </tr>
 
 
 <tr>
-    <td>tc_type</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 8</li>
-            <li>Длина: 4 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 15</li>
-        </ul>
-    </td>
-    <td>Thermocouple type</td>
+    <td>tc_type <br> Тип термопары</td>
+    <td>8</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
 </tr>
 
 
 <tr>
-    <td>temperature</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 12</li>
-            <li>Длина: 18 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 0.01</li>
-            <li>Смещение: -300</li>
-            <li>Минимум: -300</li>
-            <li>Максимум: 2000</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>temperature <br> </td>
+    <td>12</td>
+    <td>18</td>
+    <td>0.01</td>
+    <td>-300</td>
+    <td>-300</td>
+    <td>2000</td>
 </tr>
 
 
 <tr>
-    <td>voltage</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 30</li>
-            <li>Длина: 17 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 0.001</li>
-            <li>Смещение: -10</li>
-            <li>Минимум: -10</li>
-            <li>Максимум: 80</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>voltage <br> </td>
+    <td>30</td>
+    <td>17</td>
+    <td>0.001</td>
+    <td>-10</td>
+    <td>-10</td>
+    <td>80</td>
 </tr>
 
 
 <tr>
-    <td>temperature_cold_junction</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 47</li>
-            <li>Длина: 11 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 0.1</li>
-            <li>Смещение: -40</li>
-            <li>Минимум: -40</li>
-            <li>Максимум: 100</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>temperature_cold_junction <br> </td>
+    <td>47</td>
+    <td>11</td>
+    <td>0.1</td>
+    <td>-40</td>
+    <td>-40</td>
+    <td>100</td>
 </tr>
 
 
 <tr>
-    <td>out_of_range</td>
-    <td>
-        <ul>
-            <li>Начальный бит: 58</li>
-            <li>Длина: 1 бит</li>
-            <li>Порядок: LittleEndian</li>
-            <li>Масштаб: 1</li>
-            <li>Смещение: 0</li>
-            <li>Минимум: 0</li>
-            <li>Максимум: 0</li>
-        </ul>
-    </td>
-    <td></td>
+    <td>out_of_range <br> </td>
+    <td>58</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
 </tr>
 
         </tbody>

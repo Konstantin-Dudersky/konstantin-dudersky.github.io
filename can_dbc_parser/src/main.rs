@@ -79,7 +79,7 @@ fn can_signal_to_html(signal: &Signal, id: MessageId, dbc: &Dbc) -> String {
     let name = signal.name.clone();
 
     let comment = match dbc.signal_comment(id, &name) {
-        Some(v) => v,
+        Some(v) => &v.replace("_", " "),
         None => {
             warn!("Не найден комментарий для сигнала {name} в сообщении {id:?}");
             ""
@@ -120,27 +120,41 @@ const HTML_FULL: &str = r#"
 ---
 
 <style>
+    thead tr > *:not(:first-child) {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        white-space: nowrap;
+    }
 
+    tr > *:not(:first-child) {
+        text-align: center;
+    }
 </style>
+
+<h3>Модуль читает</h3>
+
+<h3>Модуль создаёт</h3>
 
 {msgs}
 "#;
 
 const HTML_MSG: &str = r#"
 <details>
-    <summary>{id} - {message_comment} </summary>
-    <ul>
-        <li>Название: EKIO_AIT_module_status</li>
-        <li>Идентификатор: {id}</li>
-        <li>Длина: {size} байт</li>
-    </ul>
+    <summary>{id} {message_comment} </summary>
+    <p>Название: EKIO_AIT_module_status</p>
+    <p>Идентификатор: {id}</p>
+    <p>Длина: {size} байт</p>
 
     <table>
         <thead>
             <tr>
-                <th>Название</th>
-                <th>Свойства</th>
-                <th>Описание</th>
+                <th></th>
+                <th>Начальный бит</th>
+                <th>Размер, бит</th>
+                <th>Масштаб</th>
+                <th>Смещение</th>
+                <th>Минимум</th>
+                <th>Максимум</th>
             </tr>
         </thead>
         <tbody>
@@ -151,18 +165,12 @@ const HTML_MSG: &str = r#"
 
 const HTML_SIGNAL: &str = r#"
 <tr>
-    <td>{name}</td>
-    <td>
-        <ul>
-            <li>Начальный бит: {start_bit}</li>
-            <li>Длина: {size} бит</li>
-            <li>Порядок: {byte_order}</li>
-            <li>Масштаб: {factor}</li>
-            <li>Смещение: {offset}</li>
-            <li>Минимум: {min}</li>
-            <li>Максимум: {max}</li>
-        </ul>
-    </td>
-    <td>{comment}</td>
+    <td>{name} <br> {comment}</td>
+    <td>{start_bit}</td>
+    <td>{size}</td>
+    <td>{factor}</td>
+    <td>{offset}</td>
+    <td>{min}</td>
+    <td>{max}</td>
 </tr>
 "#;
