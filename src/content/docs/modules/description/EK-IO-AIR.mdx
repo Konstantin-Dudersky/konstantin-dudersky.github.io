@@ -1,0 +1,54 @@
+---
+title: EK-IO-AIR
+description: Модуль для подключения 4 датчиков термосопротивлений (PT100, PT1000).
+---
+
+import ImageCenter  from '@components/ImageCenter.astro';
+import Links  from '@components/Links.astro';
+import Options  from '@components/Options.astro';
+import PcbRender  from '@components/PcbRender.astro';
+
+<p>
+    { frontmatter.description }
+</p>
+
+Основные характеристики:
+- Погрешность измерения не более 0,5 °C
+
+
+## Конфигурация
+
+## Внешний вид
+
+import render_top from "./EK-IO-AIR/render_x0y0z0.png";
+import render_bottom from "./EK-IO-AIR/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
+
+## Описание
+
+## Ссылки
+
+<Links
+    links={[
+        {
+            label: "MAX31865 даташит",
+            download: "/datasheets/MAX31865.pdf",
+            link: "https://www.analog.com/en/products/max31865.html#reference-designs",
+        },
+        {
+            label: "ESP32-C3 даташит",
+            download: "/datasheets/ESP32-C3.pdf",
+            link: "https://www.espressif.com/en/products/socs/esp32-c3",
+        },
+        {
+            label: "ГОСТ 6651-2009. Термопреобразователи сопротивления из платины, меди и никеля",
+            download: "/datasheets/gost-6651-2009.pdf",
+            link: "https://www.gostinfo.ru/catalog/Details/?id=8121257",
+        },
+    ]}
+/>
