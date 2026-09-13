@@ -1,0 +1,137 @@
+
+---
+---
+
+<style>
+    .can_message {
+        width: 100%;
+    }
+
+    table td:first-child,
+    table th:first-child {
+        width: 100%;
+    }
+
+    thead tr > *:not(:first-child) {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        white-space: nowrap;
+    }
+
+    tr > *:not(:first-child) {
+        text-align: center;
+    }
+</style>
+
+
+<details>
+    <summary>0x032 Статус модуля </summary>
+    <p>Название: EKIO_AIW_module_status</p>
+    <p>Идентификатор: 0x032</p>
+    <p>Длина: 2 байт</p>
+
+    <table class="can_message">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Начальный бит</th>
+                <th>Размер, бит</th>
+                <th>Масштаб</th>
+                <th>Смещение</th>
+                <th>Минимум</th>
+                <th>Максимум</th>
+                <th>Ед. измерения</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+<tr>
+    <td>module_address <br> Адрес модуля</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td>temperature <br> Температура AD7193</td>
+    <td>4</td>
+    <td>11</td>
+    <td>0.1</td>
+    <td>-50</td>
+    <td>-50</td>
+    <td>150</td>
+    <td>℃</td>
+</tr>
+
+        </tbody>
+    </table>
+
+    
+</details>
+
+<details>
+    <summary>0x033 Показания отдельного канала </summary>
+    <p>Название: EKIO_AIW_channel_status</p>
+    <p>Идентификатор: 0x033</p>
+    <p>Длина: 4 байт</p>
+
+    <table class="can_message">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Начальный бит</th>
+                <th>Размер, бит</th>
+                <th>Масштаб</th>
+                <th>Смещение</th>
+                <th>Минимум</th>
+                <th>Максимум</th>
+                <th>Ед. измерения</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+<tr>
+    <td>module_address <br> Адрес модуля</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>255</td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td>channel_number <br> </td>
+    <td>4</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td>value <br> </td>
+    <td>8</td>
+    <td>24</td>
+    <td>0.000001</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>1</td>
+    <td></td>
+</tr>
+
+        </tbody>
+    </table>
+
+    
+</details>

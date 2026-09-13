@@ -85,9 +85,17 @@ import render_bottom from "./EK-IO-AIW/render_x0y180z0.png";
 
 ## Сообщения CAN шины
 
-import CanMessages from "./EK-IO-AIW/can_messages.astro";
+### Модуль читает
 
-<CanMessages />
+import CanMessagesRx from "./EK-IO-AIW/can_messages_rx.astro";
+
+<CanMessagesRx />
+
+### Модуль создаёт
+
+import CanMessagesTx from "./EK-IO-AIW/can_messages_tx.astro";
+
+<CanMessagesTx />
 
 ## Ссылки
 

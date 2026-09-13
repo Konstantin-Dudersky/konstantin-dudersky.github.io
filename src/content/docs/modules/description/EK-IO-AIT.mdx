@@ -3,6 +3,7 @@ title: EK-IO-AIT
 description: Модуль для подключения 8 термопар.
 ---
 
+import Links  from '@components/Links.astro';
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 import CanFrame from '@components/CanFrame.astro';
@@ -83,19 +84,52 @@ import render_bottom from "./EK-IO-AIT/render_x0y180z0.png";
 
 ## Сообщения CAN шины
 
-import CanMessages from "./EK-IO-AIT/can_messages.astro";
+### Модуль читает
 
-<CanMessages />
+import CanMessagesRx from "./EK-IO-AIT/can_messages_rx.astro";
+
+<CanMessagesRx />
+
+### Модуль создаёт
+
+import CanMessagesTx from "./EK-IO-AIT/can_messages_tx.astro";
+
+<CanMessagesTx />
 
 
 ## Ссылки
 
-|  |  |  |
-| --- | --- | --- |
-| **ADS1115** даташит | [Скачать](/datasheets/ads1115.pdf) | [Ссылка](https://www.ti.com/product/ADS1115) |
-| **CA-IS3050** даташит | [Скачать](/datasheets/CA-IS3050.pdf) | [Ссылка](https://e.chipanalog.com/products/interface/isolated/ict/722) |
-| **ESP32-C3** даташит | [Скачать](/datasheets/ESP32-C3.pdf) | [Ссылка](https://www.espressif.com/en/products/socs/esp32-c3) |
-| **MCP23017** даташит | [Скачать](/datasheets/MCP23017.pdf) | [Ссылка](https://www.microchip.com/en-us/product/mcp23017) |
-| **TMP75** даташит | [Скачать](/datasheets/tmp75.pdf) | [Ссылка](https://www.ti.com/product/TMP75) |
-| A Basic Guide to Thermocouple Measurements. SBAA274A, Texas Instruments | [Скачать](/datasheets/SBAA274A.pdf) | [Ссылка](https://www.ti.com/lit/an/sbaa274a/sbaa274a.pdf) |
-| Thermocouple Cold Junction Compensation. Renesas | [Скачать](/datasheets/SLG47011.pdf) | [Ссылка](https://www.renesas.com/en/document/apn/cm-389-thermocouple-cold-junction-compensation) |
+<Links
+    links={[
+        {
+            label: "ADS1115 даташит ",
+            download: "/datasheets/ads1115.pdf",
+            link: "https://www.ti.com/product/ADS1115",
+        },
+        {
+            label: "ESP32-C3 даташит",
+            download: "/datasheets/ESP32-C3.pdf",
+            link: "https://www.espressif.com/en/products/socs/esp32-c3",
+        },
+        {
+            label: "MCP23017 даташит",
+            download: "/datasheets/MCP23017.pdf",
+            link: "https://www.microchip.com/en-us/product/mcp23017",
+        },
+        {
+            label: "TMP75 даташит",
+            download: "/datasheets/tmp75.pdf",
+            link: "https://www.ti.com/product/TMP75",
+        },
+        {
+            label: "A Basic Guide to Thermocouple Measurements. SBAA274A, Texas Instruments",
+            download: "/datasheets/SBAA274A.pdf",
+            link: "https://www.ti.com/lit/an/sbaa274a/sbaa274a.pdf",
+        },
+        {
+            label: "Thermocouple Cold Junction Compensation. Renesas",
+            download: "/datasheets/SLG47011.pdf",
+            link: "https://www.renesas.com/en/document/apn/cm-389-thermocouple-cold-junction-compensation",
+        },
+    ]}
+/>

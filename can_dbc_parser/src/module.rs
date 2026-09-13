@@ -1,4 +1,5 @@
 pub struct Module {
     pub name: &'static str,
-    pub can_sending_mode: &'static str,
+    pub messages_tx: Vec<&'static str>,
+    pub messages_rx: Vec<&'static str>,
 }
