@@ -11,13 +11,38 @@ const channelVariants: IOptionVariant[] = [
     price: 777,
   } as IOptionVariant,
   {
-    name: "PT100",
-    desc: "Датчик PT100",
+    name: "Pt-100",
+    desc: "Датчик Pt-100",
     price: 777,
   } as IOptionVariant,
   {
-    name: "PT1000",
-    desc: "Датчик PT1000",
+    name: "Pt-1000",
+    desc: "Датчик Pt-1000",
+    price: 777,
+  } as IOptionVariant,
+  {
+    name: "Cu-100",
+    desc: "Датчик Cu-100",
+    price: 777,
+  } as IOptionVariant,
+  {
+    name: "Cu-1000",
+    desc: "Датчик Cu-1000",
+    price: 777,
+  } as IOptionVariant,
+  {
+    name: "Ni-100",
+    desc: "Датчик Ni-100",
+    price: 777,
+  } as IOptionVariant,
+  {
+    name: "Ni-120",
+    desc: "Датчик Ni-120",
+    price: 777,
+  } as IOptionVariant,
+  {
+    name: "Ni-1000",
+    desc: "Датчик Ni-1000",
     price: 777,
   } as IOptionVariant,
 ];
