@@ -69,21 +69,71 @@ import render_bottom from "./EK-IO-AIR/render_x0y180z0.png";
 
 ## Описание
 
+import Schematic from "./EK-IO-AIR/schematic.svg";
 
+<ImageCenter
+    label="Функциональная схема модуля EK-IO-AIR"
+    width="700px"
+>
+    <Schematic alt="Функциональная схема модуля EK-IO-AIR"/>
+</ImageCenter>
+
+[EKMC-ESP32C3](/modules/description/ekmc-esp32c3) - плата с микроконтроллером ESP32-C3 для управления работой модуля. Выполняет следующие функции:
+- конфигурирует АЦП MAX31865 по протоколу SPI
+- последовательно опрашивает измеренные значения в АЦП MAX31865
+- управляет светодиодной индикацией через расширитель портов MCP23017 по протоколу I²C
+- передаёт данные измерения через шину CAN
+
+Для определения сопротивления тероморезистивных датчиков используется АЦП MAX31865. АЦП измеряет отношение сопротивления терморезистора к опорному резистору. Далее по таблицам ГОСТ 6651-2009 по значению сопротивления определяется температура.
+
+Распиновка микроконтроллера ESP32-C3:
+- SPI:
+  - MOSI - GPIO 2
+  - MISO - GPIO 3
+  - SCK - GPIO 4
+  - CS0 (CH0) - GPIO 5
+  - CS1 (CH1) - GPIO 6
+  - CS2 (CH2) - GPIO 7
+  - CS3 (CH3) - GPIO 8
+- I²C:
+  - SDA - GPIO 0
+  - SCL - GPIO 1
+- CAN:
+  - RX - GPIO 21
+  - TX - GPIO 20
+
+## Сообщения CAN шины
+
+### Модуль читает
+
+import CanMessagesRx from "./EK-IO-AIR/can_messages_rx.astro";
+
+<CanMessagesRx />
+
+### Модуль создаёт
+
+import CanMessagesTx from "./EK-IO-AIR/can_messages_tx.astro";
+
+<CanMessagesTx />
 
 ## Ссылки
 
 <Links
     links={[
         {
+            label: "ESP32-C3 даташит",
+            download: "/datasheets/ESP32-C3.pdf",
+            link: "https://www.espressif.com/en/products/socs/esp32-c3",
+        },
+        {
             label: "MAX31865 даташит",
             download: "/datasheets/MAX31865.pdf",
             link: "https://www.analog.com/en/products/max31865.html#reference-designs",
         },
         {
-            label: "ESP32-C3 даташит",
-            download: "/datasheets/ESP32-C3.pdf",
-            link: "https://www.espressif.com/en/products/socs/esp32-c3",
+            label: "MCP23017 даташит",
+            download: "/datasheets/MCP23017.pdf",
+            link: "https://www.microchip.com/en-us/product/mcp23017",
         },
         {
             label: "ГОСТ 6651-2009. Термопреобразователи сопротивления из платины, меди и никеля",
