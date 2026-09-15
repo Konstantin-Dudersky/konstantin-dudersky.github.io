@@ -34,6 +34,11 @@ fn main() {
             messages_tx: vec!["EK_IO_AIW_module_status", "EK_IO_AIW_channel_status"],
             messages_rx: vec!["EK_watchdog"],
         },
+        Module {
+            name: "EK-IO-DI",
+            messages_tx: vec!["EK_IO_DI_status"],
+            messages_rx: vec!["EK_watchdog"],
+        },
     ];
 
     for module in &modules {

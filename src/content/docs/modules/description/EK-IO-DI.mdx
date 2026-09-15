@@ -1,13 +1,13 @@
 ---
-title: EKIO-DIx32
+title: EK-IO-DI
 description: 32-канальный модуль опроса дискретных входов.
 ---
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import Schematic from "./EKIO-DIx32/schematic.svg";
-import ExtConn from "./EKIO-DIx32/ext_conn.svg";
-import { options_config } from './EKIO-DIx32/options.ts';
+import Schematic from "./EK-IO-DI/schematic.svg";
+import ExtConn from "./EK-IO-DI/ext_conn.svg";
+import { options_config } from './EK-IO-DI/options.ts';
 
 <p>
     { frontmatter.description }
@@ -44,14 +44,28 @@ import { options_config } from './EKIO-DIx32/options.ts';
 
 ## Внешний вид
 
-import render_top from "./EKIO-DIx32/render_x0y0z0.png";
-import render_bottom from "./EKIO-DIx32/render_x0y180z0.png";
+import render_top from "./EK-IO-DI/render_x0y0z0.png";
+import render_bottom from "./EK-IO-DI/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
     top = {render_top}
     bottom = {render_bottom}
 />
+
+## Сообщения CAN шины
+
+### Модуль читает
+
+import CanMessagesRx from "./EK-IO-DI/can_messages_rx.astro";
+
+<CanMessagesRx />
+
+### Модуль создаёт
+
+import CanMessagesTx from "./EK-IO-DI/can_messages_tx.astro";
+
+<CanMessagesTx />
 
 ## Описание
 

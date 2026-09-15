@@ -1,6 +1,6 @@
 ---
-title: EKDR-BLDC
-description: Модуль управления бесщёточным двигателем постоянного тока.
+title: EK-DR-BLDC
+description: Модуль управления бесщёточным двигателем постоянного тока (BLDC).
 ---
 
 import ImageCenter  from '@components/ImageCenter.astro';
@@ -16,9 +16,22 @@ import PcbRender  from '@components/PcbRender.astro';
 - Напряжение двигателя от 4,5 В до 60 В
 - Ток до 6 А
 
-## Описание
 
 ## Конфигурация
+
+## Внешний вид
+
+import render_top from "./EK-DR-BLDC/render_x0y0z0.png";
+import render_bottom from "./EK-DR-BLDC/render_x0y180z0.png";
+
+<PcbRender
+    pcb_article = {frontmatter.title}
+    top = {render_top}
+    bottom = {render_bottom}
+/>
+
+## Описание
+
 
 ## Ссылки
 

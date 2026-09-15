@@ -85,6 +85,11 @@ export default defineConfig({
             ],
           },
           {
+            label: "Алтай-К",
+            link: "/altai-k/",
+            items: [],
+          },
+          {
             label: "Весоизмерительные системы",
             link: "/weight/",
             items: [],
