@@ -53,7 +53,7 @@ copy_pcb_render EKIO-PWMx16 0.2.0
 copy_pcb_render EKIO-RQx8 0.2.1
 copy_pcb_render EKLD-10 0.2.0
 copy_pcb_render EKLD-18 0.2.0
-copy_pcb_render EKMC-ESP32C3 0.2.1
+copy_pcb_render EK-MC-ESP32C3 0.2.1
 copy_pcb_render EKPS-20W 0.2.0
 copy_pcb_render EKSP-CAN 0.2.1
 
