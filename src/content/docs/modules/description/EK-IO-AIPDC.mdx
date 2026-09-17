@@ -1,5 +1,5 @@
 ---
-title: EKIO-AIPDCx8
+title: EK-IO-AIPDC
 description: 8-канальный модуль измерения постоянного тока и напряжения.
 ---
 
@@ -21,14 +21,14 @@ import PcbRender  from '@components/PcbRender.astro';
 
 ## Конфигурация
 
-import { options_config } from './EKIO-AIPDCx8/options.ts';
+import { options_config } from './EK-IO-AIPDC/options.ts';
 
 <Options options_config = {options_config} />
 
 ## Внешний вид
 
-import render_top from "./EKIO-AIPDCx8/render_x0y0z0.png";
-import render_bottom from "./EKIO-AIPDCx8/render_x0y180z0.png";
+import render_top from "./EK-IO-AIPDC/render_x0y0z0.png";
+import render_bottom from "./EK-IO-AIPDC/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}

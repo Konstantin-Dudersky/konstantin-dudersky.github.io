@@ -47,7 +47,7 @@ copy_pcb_render EKIO-AQx4 0.2.0
 copy_pcb_render EKIO-CNTx4 0.2.0
 copy_pcb_render EK-IO-DI 0.2.0
 copy_pcb_render EKIO-DQx16 0.2.0
-copy_pcb_render EKIO-AIPDCx8 0.2.0
+copy_pcb_render EK-IO-AIPDC 0.2.0
 copy_pcb_render EKIO-PFMx4 0.2.0
 copy_pcb_render EKIO-PWMx16 0.2.0
 copy_pcb_render EKIO-RQx8 0.2.1
