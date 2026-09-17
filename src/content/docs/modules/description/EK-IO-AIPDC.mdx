@@ -3,6 +3,8 @@ title: EK-IO-AIPDC
 description: 8-канальный модуль измерения постоянного тока и напряжения.
 ---
 
+import ImageCenter  from '@components/ImageCenter.astro';
+import Links  from '@components/Links.astro';
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
@@ -10,6 +12,8 @@ import PcbRender  from '@components/PcbRender.astro';
     { frontmatter.description }
 </p>
 
+
+Основные характеристики:
 - Измерение тока, напряжения и мощности потребителей постоянного тока
 - Напряжение DC в диапазоне 0 - 36 В
 - Ток до 5 А
@@ -36,6 +40,20 @@ import render_bottom from "./EK-IO-AIPDC/render_x0y180z0.png";
     bottom = {render_bottom}
 />
 
+## Сообщения CAN шины
+
+### Модуль читает
+
+import CanMessagesRx from "./EK-IO-AIPDC/can_messages_rx.astro";
+
+<CanMessagesRx />
+
+### Модуль создаёт
+
+import CanMessagesTx from "./EK-IO-AIPDC/can_messages_tx.astro";
+
+<CanMessagesTx />
+
 ## Описание
 
 Для измерения тока и напряжения используется чип **INA226**. Напряжение измеряется непосредственно, а ток - за счёт измерения падения напряжения на шунте. Сопротивление шунта определяет максимальный ток, который может быть измерен **INA226**. В таблице приводится некоторые значения сопротивлений шунта.
@@ -59,6 +77,22 @@ import render_bottom from "./EK-IO-AIPDC/render_x0y180z0.png";
 
 ## Ссылки
 
-|  |  |  |
-| --- | --- | --- |
-| **INA226** даташит | [Скачать](/datasheets/ina226.pdf) | [Ссылка](https://www.ti.com/product/INA226) |
+<Links
+    links={[
+        {
+            label: "ESP32-C3 даташит",
+            download: "/datasheets/ESP32-C3.pdf",
+            link: "https://www.espressif.com/en/products/socs/esp32-c3",
+        },
+        {
+            label: "INA226 даташит",
+            download: "/datasheets/ina226.pdf",
+            link: "https://www.ti.com/product/INA226",
+        },
+        {
+            label: "MCP23017 даташит",
+            download: "/datasheets/MCP23017.pdf",
+            link: "https://www.microchip.com/en-us/product/mcp23017",
+        },
+    ]}
+/>

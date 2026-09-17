@@ -67,6 +67,21 @@ import render_bottom from "./EK-IO-AIR/render_x0y180z0.png";
     bottom = {render_bottom}
 />
 
+## Сообщения CAN шины
+
+### Модуль читает
+
+import CanMessagesRx from "./EK-IO-AIR/can_messages_rx.astro";
+
+<CanMessagesRx />
+
+### Модуль создаёт
+
+import CanMessagesTx from "./EK-IO-AIR/can_messages_tx.astro";
+
+<CanMessagesTx />
+
+
 ## Описание
 
 import Schematic from "./EK-IO-AIR/schematic.svg";
@@ -102,19 +117,6 @@ import Schematic from "./EK-IO-AIR/schematic.svg";
   - RX - GPIO 21
   - TX - GPIO 20
 
-## Сообщения CAN шины
-
-### Модуль читает
-
-import CanMessagesRx from "./EK-IO-AIR/can_messages_rx.astro";
-
-<CanMessagesRx />
-
-### Модуль создаёт
-
-import CanMessagesTx from "./EK-IO-AIR/can_messages_tx.astro";
-
-<CanMessagesTx />
 
 ## Ссылки
 

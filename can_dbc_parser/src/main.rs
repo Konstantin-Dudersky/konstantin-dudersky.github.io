@@ -20,6 +20,11 @@ fn main() {
 
     let modules = vec![
         Module {
+            name: "EK-IO-AIPDC",
+            messages_tx: vec!["EK_IO_AIPDC_module_status", "EK_IO_AIPDC_channel_status"],
+            messages_rx: vec!["EK_watchdog"],
+        },
+        Module {
             name: "EK-IO-AIR",
             messages_tx: vec!["EK_IO_AIR_channel_status"],
             messages_rx: vec!["EK_watchdog"],
