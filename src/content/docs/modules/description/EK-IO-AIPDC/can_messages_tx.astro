@@ -25,8 +25,46 @@
 
 
 <details>
-    <summary>0x02D Статус модуля </summary>
+    <summary>0x02C Статус модуля </summary>
     <p>Название: EK_IO_AIPDC_module_status</p>
+    <p>Идентификатор: 0x02C</p>
+    <p>Длина: 8 байт</p>
+
+    <table class="can_message">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Начальный бит</th>
+                <th>Размер, бит</th>
+                <th>Масштаб</th>
+                <th>Смещение</th>
+                <th>Минимум</th>
+                <th>Максимум</th>
+                <th>Ед. измерения</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+<tr>
+    <td>module_address <br> Адрес модуля</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
+    <td></td>
+</tr>
+
+        </tbody>
+    </table>
+
+    
+</details>
+
+<details>
+    <summary>0x02D Показания отдельного канала (1) </summary>
+    <p>Название: EK_IO_AIPDC_channel_status_1</p>
     <p>Идентификатор: 0x02D</p>
     <p>Длина: 8 байт</p>
 
@@ -45,6 +83,53 @@
         </thead>
         <tbody>
             
+<tr>
+    <td>module_address <br> Адрес модуля</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td>channel_number <br> Номер канала</td>
+    <td>4</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td>shunt_voltage <br> Падение напряжения на шунте</td>
+    <td>8</td>
+    <td>21</td>
+    <td>0.0001</td>
+    <td>-82</td>
+    <td>-82</td>
+    <td>82</td>
+    <td>мВ</td>
+</tr>
+
+
+<tr>
+    <td>bus_voltage <br> Напряжение</td>
+    <td>29</td>
+    <td>23</td>
+    <td>0.00001</td>
+    <td>0</td>
+    <td>0</td>
+    <td>42</td>
+    <td>В</td>
+</tr>
+
         </tbody>
     </table>
 
@@ -52,10 +137,10 @@
 </details>
 
 <details>
-    <summary>0x02E Показания отдельного канала </summary>
-    <p>Название: EK_IO_AIPDC_channel_status</p>
+    <summary>0x02E Показания отдельного канала (2) </summary>
+    <p>Название: EK_IO_AIPDC_channel_status_2</p>
     <p>Идентификатор: 0x02E</p>
-    <p>Длина: 0 байт</p>
+    <p>Длина: 8 байт</p>
 
     <table class="can_message">
         <thead>
@@ -72,6 +157,53 @@
         </thead>
         <tbody>
             
+<tr>
+    <td>module_address <br> Адрес модуля</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td>channel_number <br> Номер канала</td>
+    <td>4</td>
+    <td>4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>15</td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td>current <br> Ток</td>
+    <td>8</td>
+    <td>24</td>
+    <td>0.000001</td>
+    <td>0</td>
+    <td>0</td>
+    <td>10</td>
+    <td>А</td>
+</tr>
+
+
+<tr>
+    <td>power <br> Мощность</td>
+    <td>32</td>
+    <td>29</td>
+    <td>0.000001</td>
+    <td>0</td>
+    <td>0</td>
+    <td>360</td>
+    <td>Вт</td>
+</tr>
+
         </tbody>
     </table>
 
