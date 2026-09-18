@@ -1,5 +1,5 @@
 ---
-title: EKIO-AQx4
+title: EK-IO-AQ
 description: 4-канальный модуль аналогового выхода 0–20 мА, 4–20 мА, 0–10 В.
 ---
 
@@ -37,14 +37,14 @@ import PcbRender  from '@components/PcbRender.astro';
 
 ## Конфигурация
 
-import { options_config } from './EKIO-AQx4/options.ts';
+import { options_config } from './EK-IO-AQ/options.ts';
 
 <Options options_config = {options_config} />
 
 ## Внешний вид
 
-import render_top from "./EKIO-AQx4/render_x0y0z0.png";
-import render_bottom from "./EKIO-AQx4/render_x0y180z0.png";
+import render_top from "./EK-IO-AQ/render_x0y0z0.png";
+import render_bottom from "./EK-IO-AQ/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
