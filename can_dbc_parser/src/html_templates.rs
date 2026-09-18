@@ -16,6 +16,7 @@ pub(crate) const HTML_FULL: &str = r#"
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         white-space: nowrap;
+        vertical-align: middle;
     }
 
     tr > *:not(:first-child) {
