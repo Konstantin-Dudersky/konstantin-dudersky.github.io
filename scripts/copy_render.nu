@@ -41,7 +41,7 @@ copy_pcb_render EKIF-1Wire 0.2.0
 copy_pcb_render EKIF-I2Cx8 0.2.1
 copy_pcb_render EK-IO-AIR 0.2.0
 copy_pcb_render EK-IO-AIT 0.2.0
-copy_pcb_render EKIO-AIVx8 0.2.0
+copy_pcb_render EK-IO-AIV 0.2.0
 copy_pcb_render EK-IO-AIW 0.2.0
 copy_pcb_render EKIO-AQx4 0.2.0
 copy_pcb_render EKIO-CNTx4 0.2.0
@@ -58,5 +58,5 @@ copy_pcb_render EKPS-20W 0.2.0
 copy_pcb_render EKSP-CAN 0.2.1
 
 
-copy_kicad_image EKIO-AIVx8 kicad_images-pmio_aiv_voltage_channel
-copy_kicad_image EKIO-AIVx8 kicad_images-pmio_aiv_current_channel
+copy_kicad_image EK-IO-AIV kicad_images-pmio_aiv_voltage_channel
+copy_kicad_image EK-IO-AIV kicad_images-pmio_aiv_current_channel

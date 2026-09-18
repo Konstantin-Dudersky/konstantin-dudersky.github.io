@@ -1,14 +1,14 @@
 ---
-title: EKIO-AIVx8
+title: EK-IO-AIV
 description: Модуль для подключения 8 датчиков 0–10 В или 0–20 (4-20) мА.
 ---
 
 import Options  from '@components/Options.astro';
 import PcbRender  from '@components/PcbRender.astro';
 
-import ExtConn from "./EKIO-AIVx8/ext_conn.svg";
-import Schematic from "./EKIO-AIVx8/schematic.svg";
-import { options_config } from './EKIO-AIVx8/options.ts';
+import ExtConn from "./EK-IO-AIV/ext_conn.svg";
+import Schematic from "./EK-IO-AIV/schematic.svg";
+import { options_config } from './EK-IO-AIV/options.ts';
 
 <p>
     { frontmatter.description }
@@ -41,8 +41,8 @@ import { options_config } from './EKIO-AIVx8/options.ts';
 
 ## Внешний вид
 
-import render_top from "./EKIO-AIVx8/render_x0y0z0.png";
-import render_bottom from "./EKIO-AIVx8/render_x0y180z0.png";
+import render_top from "./EK-IO-AIV/render_x0y0z0.png";
+import render_bottom from "./EK-IO-AIV/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
@@ -84,7 +84,7 @@ import render_bottom from "./EKIO-AIVx8/render_x0y180z0.png";
 
 ### Схема канала 0–10 В
 
-import VoltageChannel from "./EKIO-AIVx8/kicad_images-pmio_aiv_voltage_channel.svg";
+import VoltageChannel from "./EK-IO-AIV/kicad_images-pmio_aiv_voltage_channel.svg";
 
 <VoltageChannel width={700} height={280} preserveAspectRatio="xMidYMax meet"/>
 
@@ -108,7 +108,7 @@ $ f = \frac{1}{2 \pi \cdot R_{601} \cdot C_{601}} = \frac{1}{2 \pi \cdot 330 Ohm
 
 ### Схема канала 0–20 мА
 
-import CurrentChannel from "./EKIO-AIVx8/kicad_images-pmio_aiv_current_channel.svg";
+import CurrentChannel from "./EK-IO-AIV/kicad_images-pmio_aiv_current_channel.svg";
 
 <CurrentChannel width={700} height={280}  preserveAspectRatio="xMidYMax meet"/>
 
