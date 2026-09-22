@@ -32,7 +32,7 @@ def copy_kicad_image [article: string, filename: string] {
 }
 
 copy_pcb_render EKCP-ESP32C3 0.2.0
-copy_pcb_render EKCP-LLP 0.2.0
+copy_pcb_render EK-CP-LLP 0.2.0
 copy_pcb_render EKCP-RP 0.2.0
 copy_pcb_render EK-DR-BLDC 0.2.1
 copy_pcb_render EKDR-StepAx1 0.2.1
@@ -54,7 +54,7 @@ copy_pcb_render EK-IO-RQ 0.2.1
 copy_pcb_render EK-LD-10 0.2.0
 copy_pcb_render EK-LD-18 0.2.0
 copy_pcb_render EK-MC-ESP32C3 0.2.1
-copy_pcb_render EKPS-20W 0.2.0
+copy_pcb_render EK-PS-20W 0.2.0
 copy_pcb_render EKSP-CAN 0.2.1
 
 

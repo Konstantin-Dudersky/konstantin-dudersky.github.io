@@ -1,5 +1,5 @@
 ---
-title: EKPS-20W
+title: EK-PS-20W
 description: Модуль блока питания 20 Вт, AC230 В.
 ---
 
@@ -35,14 +35,14 @@ import PcbRender  from '@components/PcbRender.astro';
 
 ## Конфигурация
 
-import { options_config } from './EKPS-20W/options.ts';
+import { options_config } from './EK-PS-20W/options.ts';
 
 <Options options_config = {options_config} />
 
 ## Внешний вид
 
-import render_top from "./EKPS-20W/render_x0y0z0.png";
-import render_bottom from "./EKPS-20W/render_x0y180z0.png";
+import render_top from "./EK-PS-20W/render_x0y0z0.png";
+import render_bottom from "./EK-PS-20W/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
@@ -52,7 +52,7 @@ import render_bottom from "./EKPS-20W/render_x0y180z0.png";
 
 ## Описание
 
-import Schematic from "./EKPS-20W/schematic.svg";
+import Schematic from "./EK-PS-20W/schematic.svg";
 
 <Schematic />
 
