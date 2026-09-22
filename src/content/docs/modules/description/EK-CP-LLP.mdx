@@ -1,5 +1,5 @@
 ---
-title: EKCP-LLP
+title: EK-CP-LLP
 description: Модуль контроллера на базе одноплатника Luckfox Lyra.
 ---
 
@@ -27,7 +27,7 @@ import PcbRender  from '@components/PcbRender.astro';
 - Дисплеи Luckfox (https://www.luckfox.com/index.php?route=product/category&path=228_229_237)
 - Дисплеи Waveshare (https://www.waveshare.com/catalogsearch/result/?q=DSI)
 
-Операционная система - Linux, собираемая с помощью Buildroot. Производитель Luckfox [предоставляет SDK](https://wiki.luckfox.com/Luckfox-Lyra/SDK-Image-Compilation) для сборки образа. При сборке также назначается фунциональность ножек контроллера (Rockchip Matrix). Необходимая настройка дерева устройств приведена в разделе [Настройка Device Tree](/modules/description/ekcp-llp/#настройка-device-tree).
+Операционная система - Linux, собираемая с помощью Buildroot. Производитель Luckfox [предоставляет SDK](https://wiki.luckfox.com/Luckfox-Lyra/SDK-Image-Compilation) для сборки образа. При сборке также назначается фунциональность ножек контроллера (Rockchip Matrix). Необходимая настройка дерева устройств приведена в разделе [Настройка Device Tree](/modules/description/ek-cp-llp/#настройка-device-tree).
 
 При сборке модуля на контроллер **Luckfox Lyra** загружается прошивка со всеми необходимыми настройками.
 
@@ -43,14 +43,14 @@ import PcbRender  from '@components/PcbRender.astro';
 
 ## Конфигурация
 
-import { options_config } from './EKCP-LLP/options.ts';
+import { options_config } from './EK-CP-LLP/options.ts';
 
 <Options options_config = {options_config} />
 
 ## Внешний вид
 
-import render_top from "./EKCP-LLP/render_x0y0z0.png";
-import render_bottom from "./EKCP-LLP/render_x0y180z0.png";
+import render_top from "./EK-CP-LLP/render_x0y0z0.png";
+import render_bottom from "./EK-CP-LLP/render_x0y180z0.png";
 
 <PcbRender
     pcb_article = {frontmatter.title}
