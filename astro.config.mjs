@@ -80,6 +80,7 @@ export default defineConfig({
                    "modules/settings/module_config",
                    "modules/settings/can_dbc",
                    "modules/settings/can_literature",
+                   "modules/settings/canopen_spec",
                 ],
               },
             ],
